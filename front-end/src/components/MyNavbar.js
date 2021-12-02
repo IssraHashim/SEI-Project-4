@@ -12,10 +12,18 @@ import Col from 'react-bootstrap/esm/Col'
 import Row from 'react-bootstrap/esm/Row'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/fontawesome-free-solid'
+import axios from 'axios'
 
 
 
 const MyNavbar = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  })
+
+  const [errors, setErrors] = useState(false)
+
   const [click, setClick] = useState(false)
   // const userLogo = <FontAwesomeIcon icon={faUser} /> 
   const message = 'Log in / Register'
@@ -24,6 +32,25 @@ const MyNavbar = () => {
   const handleClick = () => {
     setClick(!click)
   }
+
+
+  const handleChange = (event) => {
+    const newFormData = { ...formData, [event.target.name]: event.target.value }
+    setFormData(newFormData)
+  }
+
+  const handleSubmit = async() => {
+    // event.preventDefault()
+    try {
+      console.log(formData)
+      const { data } = await axios.post('/api/auth/login/', formData)
+      console.log(data)
+    } catch (err) {
+      setErrors(true)
+    }
+      
+  }
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -46,28 +73,38 @@ const MyNavbar = () => {
           </Nav>
           <Navbar.Collapse className="justify-content-end">
             <Row >
-              <NavDropdown href="#action6" onClick={handleClick} title={ <FontAwesomeIcon icon={faUser} /> , message}  >{handleClick &&
-                <Dropdown.Menu align="end">
-                  <Form>
-                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+              <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title={ <FontAwesomeIcon icon={faUser} /> , message}  >{handleClick &&
+              <>
+                <Dropdown.Item>
+                  <Form >
+                    <Form.Group as={Col} className="mb-3" controlId="formPlaintextEmail">
                       <Form.Label column sm="2">
                         Email
                       </Form.Label>
                       <Col sm="10">
-                        <Form.Control plaintext readOnly defaultValue="email@example.com" />
+                        <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} value={formData.email}/>
+                        {errors && <p>your username or password is incorrect</p>}
+
                       </Col>
                     </Form.Group>
-          
-                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                    <Form.Group as={Col} className="mb-3" controlId="formPlaintextPassword">
                       <Form.Label column sm="2">
                         Password
                       </Form.Label>
                       <Col sm="10">
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="Password" name='password' onChange={handleChange} value={formData.password}/>
+                        {errors && <p>your username or password is incorrect</p>}
                       </Col>
                     </Form.Group>
+                    <Button type="submit" onClick={handleSubmit}>Sign in</Button>
                   </Form>
-                </Dropdown.Menu>
+                </Dropdown.Item>
+                <hr/>
+                <Dropdown.Item>
+                  <p>Not a User? Register now!</p>
+                  <Button >Register</Button>
+                </Dropdown.Item>
+              </>
               }
               </NavDropdown>
               <Col >
