@@ -15,8 +15,9 @@ import { faUser } from '@fortawesome/fontawesome-free-solid'
 import axios from 'axios'
 
 
-
 const MyNavbar = () => {
+  const csrftoken = 'gICUBXs1s5GZ1VD81qnpqooYPzdPts5Xl1qURcaQBt6kBf5w5Ew05p24dw0fseuT'
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -43,7 +44,8 @@ const MyNavbar = () => {
     // event.preventDefault()
     try {
       console.log(formData)
-      const { data } = await axios.post('/api/auth/login/', formData)
+      const { data } = await axios.post('/api/auth/login/', formData, 
+        { headers: { 'X-CSRFToken': csrftoken  } } )
       console.log(data)
     } catch (err) {
       setErrors(true)
@@ -51,6 +53,7 @@ const MyNavbar = () => {
       
   }
 
+  console.log(csrftoken)
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
