@@ -1,4 +1,38 @@
+* {
+  font-family: 'Inter', sans-serif;
+  background-color: rgba(248, 240, 240, 0.89);
+}
+
 .logindropdown {
   display: flex;
   justify-content: end;
+}
+
+#genre_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#genre_card {
+  flex-grow: 1;
+  width: calc(33% - 20px);
+  padding: 0 40px;
+}
+
+#genre_image {
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: 100px;
+}
+
+#books-cards {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#books_card {
+  flex: auto;
+  width: calc(20% - 20px);
+  margin-bottom: 30px;
+  margin: 20px 40px
 }

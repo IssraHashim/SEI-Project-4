@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import sys
 from .models import Book
-from .common import BookSerializer
+from .common import BookSerializer, GenreSerializer
 from .populated import PopulatedBookSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
@@ -31,6 +31,18 @@ class BookListView(APIView):
         except:
             return Response ({'message':'Not Found' }, status=status.HTTP_400_BAD_REQUEST)
 
+
+
+class GenreListView(APIView):
+
+    def get(self, _request):
+        try:
+            genres = Book.objects.filter()
+            serialized_genres = genres.values('genre', 'id')
+            print(serialized_genres)
+            return Response(serialized_genres.values_list('genre', 'id'),status=status.HTTP_200_OK )
+        except:
+            return Response ({'message':'Not Found' }, status=status.HTTP_400_BAD_REQUEST)
 
 
 class BookDetailView(APIView):

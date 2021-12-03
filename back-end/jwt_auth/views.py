@@ -31,8 +31,10 @@ class LoginView(APIView):
         try:
             user_to_login = User.objects.get(email=email)
         except User.DoesNotExist:
+            print('FIRST ERROR')
             raise PermissionDenied(detail='Invalid credentials')
         if not user_to_login.check_password(password):
+            print('SECOND ERROR')
             raise PermissionDenied(detail='Invalid credentials')
             
         dt = datetime.now() + timedelta(days=2)
