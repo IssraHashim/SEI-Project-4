@@ -33,7 +33,6 @@ const Browse = () => {
   }, [])
 
 
-  console.log(genres)
 
   return (
     <>
@@ -44,8 +43,8 @@ const Browse = () => {
         {genres.map(book => {
           return (
             <Card key={book.id} className="text-center" border="light" id='genre_card'>
-              <Link to= {`/browse/${book.genre}`}>
-                <Card.Img variant="top" src={book.image} id='genre_image' rounded/>
+              <Link to= {`/browse/${book.genre}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                <Card.Img variant="top" src={book.image} id='genre_image'/>
                 <Card.Body>{book.genre}</Card.Body>
               </Link>
             </Card>
@@ -59,7 +58,7 @@ const Browse = () => {
         {books.map(book => {
           return (
             <Card key={book.id} id='books_card' >
-              <Link to={`/${book.id}`}>
+              <Link to={`/${book.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                 <Card.Img variant="top" src={book.image} />
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>

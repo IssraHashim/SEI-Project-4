@@ -10,7 +10,6 @@ const Home = () => {
     const getData = async()=> {
       const { data } = await axios.get('/api/books')
       setBooks(data)
-      console.log(data)
     }
     getData()
 

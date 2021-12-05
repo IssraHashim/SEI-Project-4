@@ -16,8 +16,9 @@ import { faUser } from '@fortawesome/fontawesome-free-solid'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { userIsAuthenticated } from '../helpers/auth'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory, useLocation, Link } from 'react-router-dom'
 import * as QueryString from 'query-string'
+// import { Link } from 'react-router-dom'
 
 // import { getToken } from '../auth.js'
 
@@ -27,6 +28,7 @@ const MyNavbar = () => {
     email: '',
     password: '',
   })
+
   const [errors, setErrors] = useState(false)
   const [welcomeBack, setWelcomeBack] = useState('')
   const [click, setClick] = useState(false)
@@ -34,12 +36,26 @@ const MyNavbar = () => {
   const userLogo = <FontAwesomeIcon icon={faUser} /> 
   const history = useHistory()
   const location = useLocation()
+  const [genres, setGenres] = useState([])
 
 
 
 
   useEffect(()=> {
+    const getData = async() => {
+      const { data } = await axios.get('/api/books/')
+      const newArray = []
+      for (let i = 0; i < data.length; i++) {
+        let justgenres = false
+        justgenres = newArray.some(genre => {
+          return (genre.genre === data[i].genre )
+        })
+        if (!justgenres) newArray.push(data[i])
+      }
 
+      setGenres(newArray)
+    }
+    getData()
   }, [location.pathname])
 
 
@@ -77,22 +93,29 @@ const MyNavbar = () => {
         { headers: { 'X-CSRFToken': csrftoken  } } )
       setItemToLocalStorage(data.token)
       setWelcomeBack(data.message)
+      history.push('/')
     } catch (err) {
       setErrors(true)
     }
       
   }
 
-  console.log(csrftoken)
+  const handleRegister = () => {
+    history.push('/register')
+  }
+
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="/">  
-          <img
-            src={Logo}
-            height="60"
-            className="d-inline-block align-top"
-            alt="Bookopedia logo"/>
+        <Navbar.Brand> 
+          <Link to='/'>
+            <img
+              src={Logo}
+              height="60"
+              className="d-inline-block align-top"
+              alt="Bookopedia logo"/>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -101,8 +124,18 @@ const MyNavbar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href='browse'>Browse</Nav.Link>
-            <Nav.Link >Genre</Nav.Link>
+            <Nav.Link><Link to="/browse" style={{ color: 'inherit', textDecoration: 'inherit' }}>Browse</Link></Nav.Link>
+            <NavDropdown variant="light"autoClose="outside" title='Genre'       id="dropdown-menu-align-responsive-1"> 
+              {genres.map(book => {
+                return (
+                  <>
+                    <NavDropdown.Item key={book.id} className='mb-0 pb-0'>
+                      <Link to={`/browse/${book.genre}`} style={{ color: 'inherit', textDecoration: 'inherit' }} ><Col key={book.id} id='genre_popover'>{book.genre}</Col></Link>
+                    </NavDropdown.Item>
+                  </>
+                )
+              })}
+            </NavDropdown>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
             <Row >
@@ -148,7 +181,7 @@ const MyNavbar = () => {
                     <hr/>
                     <Dropdown.Item>
                       <p>Not a User? Register now!</p>
-                      <Button >Register</Button>
+                      <Button onClick={handleRegister}>Register</Button>
                     </Dropdown.Item>
                   </>
                 }

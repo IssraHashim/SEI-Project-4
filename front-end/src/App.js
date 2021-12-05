@@ -5,22 +5,18 @@ import Browse from './components/Browse'
 import BrowseByGenre from './components/BrowseByGenre'
 import Home from './components/Home'
 import MyNavbar from './components/MyNavbar'
+import Register from './components/Register'
 
 
 function App() {
-  // React.useEffect(() => {
-  //   const getData = async () => {
-  //     const res = await axios.get('/api/books') // * <-- replace with your endpoint
-  //     console.log(res.data)
-  //   }
-  //   getData()
-  // })
+
 
   return (
     <BrowserRouter>
       <MyNavbar />
       <Switch>
         <Route exact path='/' component={Home}/>
+        <Route exact path='/register' component={Register}/>
         <Route exact path='/browse' component={Browse}/>
         <Route exact path='/browse/:genre' component={BrowseByGenre}/>
         <Route exact path='/:id' component={Book}/>

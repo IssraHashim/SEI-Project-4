@@ -1,11 +1,11 @@
 * {
   font-family: 'Inter', sans-serif;
-  background-color: rgba(248, 240, 240, 0.89);
+  // background-color: rgba(248, 240, 240, 0.89);
 }
 
 .logindropdown {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #genre_cards {
@@ -35,4 +35,50 @@
   width: calc(20% - 20px);
   margin-bottom: 30px;
   margin: 20px 40px
+  
 }
+
+#book_image_column {
+  padding-top: 20px;
+  width:30%;
+  padding: 30px 0;
+  color:white
+}
+
+#book_info_column {
+  width: 70%;
+  color: rgb(248, 242, 232);
+}
+
+#book_image {
+  width: 60%
+}
+
+#book_banner {
+  background-color:#44433dda;
+  color: rgb(248, 242, 232);
+}
+
+#book_text {
+  font-style: italic;
+  font-size: 15px;
+}
+
+#book_title {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+#breadcrumb_book {
+  padding:20px 0 0 40px ;
+}
+
+#popover-positioned-bottom {
+  width: 200px;
+  padding: 0;
+}
+
+#genre_popover {
+  text-align: center;
+}
+
