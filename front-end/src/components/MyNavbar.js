@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/fontawesome-free-solid'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import Register from './Register'
 import { userIsAuthenticated } from '../helpers/auth'
 import { useHistory, useLocation, Link } from 'react-router-dom'
 import * as QueryString from 'query-string'
@@ -24,11 +25,12 @@ import * as QueryString from 'query-string'
 
 const MyNavbar = () => {
   const csrftoken = Cookies.get('csrftoken')
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState( {
     email: '',
     password: '',
-  })
+  } )
 
+  const [show, setShow] = useState(false)
   const [errors, setErrors] = useState(false)
   const [welcomeBack, setWelcomeBack] = useState('')
   const [click, setClick] = useState(false)
@@ -101,9 +103,12 @@ const MyNavbar = () => {
   }
 
   const handleRegister = () => {
-    history.push('/register')
+    setShow(true)
   }
 
+  const handleClose = () => {
+    setShow(false)
+  }
 
   return (
     <Navbar bg="light" expand="lg">
@@ -128,11 +133,9 @@ const MyNavbar = () => {
             <NavDropdown variant="light"autoClose="outside" title='Genre'       id="dropdown-menu-align-responsive-1"> 
               {genres.map(book => {
                 return (
-                  <>
-                    <NavDropdown.Item key={book.id} className='mb-0 pb-0'>
-                      <Link to={`/browse/${book.genre}`} style={{ color: 'inherit', textDecoration: 'inherit' }} ><Col key={book.id} id='genre_popover'>{book.genre}</Col></Link>
-                    </NavDropdown.Item>
-                  </>
+                  <NavDropdown.Item key={book.id} className='mb-0 pb-0'>
+                    <Link to={`/browse/${book.genre}`} style={{ color: 'inherit', textDecoration: 'inherit' }} ><Col key={book.id} id='genre_popover'>{book.genre}</Col></Link>
+                  </NavDropdown.Item>
                 )
               })}
             </NavDropdown>
@@ -182,6 +185,7 @@ const MyNavbar = () => {
                     <Dropdown.Item>
                       <p>Not a User? Register now!</p>
                       <Button onClick={handleRegister}>Register</Button>
+                      {show && <Register handleClose={handleClose} />}
                     </Dropdown.Item>
                   </>
                 }
