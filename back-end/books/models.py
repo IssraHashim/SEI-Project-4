@@ -35,7 +35,11 @@ class Book(models.Model):
         related_name='books',
         on_delete=models.CASCADE
     )
-
+    followers = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='liked_books',
+        blank=True
+    )
 
 
     def __str__(self):

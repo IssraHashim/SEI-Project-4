@@ -6,13 +6,8 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     profile_image = models.CharField(max_length=300)
-    liked_authors = models.ManyToManyField(
-        'authors.Author',
-        related_name='followers',
-        blank=True
-    )
-    liked_books = models.ManyToManyField(
-        'books.Book',
-        related_name='followers',
-        blank=True
-    )
+    # liked_authors = models.ManyToManyField(
+    #     'authors.Author',
+    #     related_name='followers',
+    #     blank=True
+    # )

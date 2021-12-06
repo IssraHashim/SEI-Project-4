@@ -17,7 +17,6 @@ export const ImageUploadField = ({ handleImageUrl }) => {
     const res = await axios.post(uploadUrl, data)
     handleImageUrl(res.data.url)
   }
-
   
   return (
     <>

@@ -55,9 +55,8 @@ const Register = ({ handleClose }) => {
     setFormData({ ...formData, profile_image: url } )
   }
 
-
   return (
-    <Offcanvas show='true' placement='end' onHide={handleClose}>
+    <Offcanvas show='true' placement='end' onHide={handleClose} >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Register</Offcanvas.Title>
       </Offcanvas.Header>

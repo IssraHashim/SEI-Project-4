@@ -11,6 +11,11 @@ class Author(models.Model):
         related_name='authors',
         on_delete=models.CASCADE
     )
-
+    followers = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='liked_authors',
+        blank=True
+    )
+    
     def __str__(self):
         return f'{self.name}'

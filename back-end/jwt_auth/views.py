@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
 from .serializer import UserSerializer
+from .populated import PopulatedUserSerializer
 
 User = get_user_model()
 
@@ -24,8 +25,6 @@ class RegisterView(APIView):
 class LoginView(APIView):
 
     def post(self, request):
-        print('USER ------------.',User)
-        print('DATA ------>', request.data)
         email = request.data.get('email')
         password = request.data.get('password')
         try:
@@ -42,3 +41,11 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f'Welcome back {user_to_login.username}!'})
         
 
+class UserProfile(APIView):
+    def get(self, request):
+        try:
+            user = request.user
+            serialized_user = PopulatedUserSerializer(user)
+            return Response(serialized_user.data, status=status.HTTP_200_OK )
+        except:
+            return Response(status=status.HTTP_404_NOT_FOUND)

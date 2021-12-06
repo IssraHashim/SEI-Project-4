@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import sys
 from .models import Book
-from .common import BookSerializer, GenreSerializer
+from .common import BookSerializer
 from .populated import PopulatedBookSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
@@ -39,7 +39,6 @@ class GenreListView(APIView):
         try:
             genres = Book.objects.filter()
             serialized_genres = genres.values('genre', 'id')
-            print(serialized_genres)
             return Response(serialized_genres.values_list('genre', 'id'),status=status.HTTP_200_OK )
         except:
             return Response ({'message':'Not Found' }, status=status.HTTP_400_BAD_REQUEST)
@@ -83,3 +82,22 @@ class BookDetailView(APIView):
             return Response(serialized_book.data, status=status.HTTP_200_OK)
         except:
             return Response({'message':'Not Found' }, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class BookAddView(APIView):
+
+    def put(self, request, pk):
+        try:
+            book_to_update = Book.objects.get(id=pk)
+            request.data['author'] = (book_to_update.author.id)
+            request.data['owner'] = (book_to_update.owner.id)
+            serialized_book = BookSerializer( book_to_update, data = request.data)
+            print('OWNER ------>',type(book_to_update.owner))
+        except Book.DoesNotExist:
+            raise NotFound()
+        if serialized_book.is_valid():
+            serialized_book.save()
+            return Response(serialized_book.data, status=status.HTTP_202_ACCEPTED)
+        else:
+            return Response(serialized_book.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)

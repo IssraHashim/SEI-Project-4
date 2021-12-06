@@ -5,3 +5,4 @@ from .common import AuthorSerializer
 class PopulatedAuthorSerializer(AuthorSerializer):
     books = BookSerializer(read_only=True, many=True)
     owner = UserSerializer()
+    followers = UserSerializer(many=True)
