@@ -85,7 +85,7 @@ const Book = () => {
               </div>
               {userIsAuthenticated() && 
               <div className='my-5'>
-                <a href="#" onClick={(event) => addtoCollection(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` } ><i className="fas fa-book"></i>{liked ? 'Added to your collection' : 'Add to collection'} </a>
+                <a href="#" onClick={(event) => addtoCollection(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` }><i className="fas fa-book"></i>{liked ? 'Added to your collection' : 'Add to collection'} </a>
               </div>
               }
             </div>
