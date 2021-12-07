@@ -89,3 +89,25 @@
 .liked.btn.btn-outline-light {
   background-color: rgba(230, 230, 210, 0.603);
 }
+
+#reviews_column {
+  // display: flex;
+  width: 80%;
+}
+
+.review_button {
+  display: flex;
+  width: 20%;
+  justify-content: space-evenly;
+  padding-top: 10px;
+
+}
+
+#author_image {
+  width: 70%;
+  border-radius: 50%;
+}
+
+#book_display {
+  padding: 30px 30px
+}

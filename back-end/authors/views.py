@@ -72,3 +72,22 @@ class AuthorDetailView(APIView):
             return Response(serialized_author.data, status=status.HTTP_200_OK)
         except:
             return Response({'message':'Not Found' }, status=status.HTTP_400_BAD_REQUEST)
+
+
+class AuthorAddView(APIView):
+
+    def put(self, request, pk):
+        try:
+            print('OWNER ------>',request.data)
+            author_to_update = Author.objects.get(id=pk)
+            request.data['books'] = (author_to_update.books)
+            request.data['owner'] = (author_to_update.owner.id)
+            serialized_author = AuthorSerializer(author_to_update, data = request.data)
+
+        except Author.DoesNotExist:
+            raise NotFound()
+        if serialized_author.is_valid():
+            serialized_author.save()
+            return Response(serialized_author.data, status=status.HTTP_202_ACCEPTED)
+        else:
+            return Response(serialized_author.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)

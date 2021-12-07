@@ -58,7 +58,7 @@ const Browse = () => {
         {books.map(book => {
           return (
             <Card key={book.id} id='books_card' >
-              <Link to={`/${book.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              <Link to={`/books/${book.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                 <Card.Img variant="top" src={book.image} />
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>

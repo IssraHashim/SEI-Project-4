@@ -19,7 +19,6 @@ import Register from './Register'
 import { userIsAuthenticated } from '../helpers/auth'
 import { useHistory, useLocation, Link } from 'react-router-dom'
 import * as QueryString from 'query-string'
-// import { Link } from 'react-router-dom'
 
 // import { getToken } from '../auth.js'
 

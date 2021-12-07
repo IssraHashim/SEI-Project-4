@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import AuthorPage from './components/AuthorPage'
 import Book from './components/Book'
 import Browse from './components/Browse'
 import BrowseByGenre from './components/BrowseByGenre'
@@ -19,7 +20,8 @@ function App() {
         <Route exact path='/register' component={Register}/>
         <Route exact path='/browse' component={Browse}/>
         <Route exact path='/browse/:genre' component={BrowseByGenre}/>
-        <Route exact path='/:id' component={Book}/>
+        <Route exact path='/books/:id' component={Book}/>
+        <Route exact path='/author/:id' component={AuthorPage}/>
       </Switch>
     </BrowserRouter>
   )

@@ -1,6 +1,5 @@
 
-/* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react'
+import React from 'react'
 import axios from 'axios'
 
 const uploadUrl = 'https://api.cloudinary.com/v1_1/dgcme57zq/image/upload'
