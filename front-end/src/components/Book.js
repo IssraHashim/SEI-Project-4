@@ -16,6 +16,7 @@ const Book = () => {
   const [reviews, setReviews] = useState([])
   const [owner, setOwner] = useState([])
   const [liked, setLiked] = useState(false)
+  const [rating, setRating] = useState()
   const [showReview, setShowReview] = useState(false)
   const history = useHistory()
 
@@ -26,6 +27,7 @@ const Book = () => {
       setAuthor(data.author)
       setReviews(data.reviews)
       setOwner(data.owner)
+      avgRating(data.reviews)
       const user = getUserData()
       if (!user) return false
       data.followers.some( follower => {
@@ -34,7 +36,6 @@ const Book = () => {
         }
       })
     }
-    
     getData()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -99,6 +100,16 @@ const Book = () => {
   }
 
 
+  const avgRating = (reviews) => {
+    if (reviews.length > 0) {
+      const allratings = reviews.map(review => review.rating)
+      console.log(allratings)
+      const average = allratings.reduce((a, b) => (a + b)) / allratings.length
+      setRating((average.toFixed(1)))
+    }
+  }
+
+
 
   return (
     <>
@@ -130,6 +141,7 @@ const Book = () => {
               <p className="text mt-3" >{book.genre}</p>
               <p className="text my-4" id='book_text'>{book.description}</p>
               <p className="text" id='book_text'>First published in {book.publication_year}</p>
+              {reviews.length > 0 && <p className="text" id='book_text'> Rating {rating} <i className="fas fa-star"></i></p>}
               {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteBook} >Delete book</Button>}
             </div>
           </div>

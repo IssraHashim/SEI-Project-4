@@ -40,7 +40,7 @@ class Book(models.Model):
         related_name='liked_books',
         blank=True
     )
-
+    
 
     def __str__(self):
         return f'{self.title}'

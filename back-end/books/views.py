@@ -10,6 +10,7 @@ from .models import Book
 from .common import BookSerializer
 from .populated import PopulatedBookSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from django.db.models import Avg
 
 class BookListView(APIView):
     permissions_classes = (IsAuthenticatedOrReadOnly, )
