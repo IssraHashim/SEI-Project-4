@@ -14,6 +14,7 @@ const Book = () => {
   const [ book, setBook] = useState([])
   const [ author, setAuthor] = useState([])
   const [reviews, setReviews] = useState([])
+  const [owner, setOwner] = useState([])
   const [liked, setLiked] = useState(false)
   const [showReview, setShowReview] = useState(false)
   const history = useHistory()
@@ -24,12 +25,14 @@ const Book = () => {
       setBook(data)
       setAuthor(data.author)
       setReviews(data.reviews)
+      setOwner(data.owner)
       const user = getUserData()
       if (!user) return false
-      if (!data.followers.includes(user.id)) {
-        setLiked(false)
-        return false
-      }
+      data.followers.some( follower => {
+        if (follower.id === user.id) {
+          setLiked(true)
+        }
+      })
     }
     
     getData()
@@ -73,7 +76,6 @@ const Book = () => {
   }
 
   const userIsOwner = (currentUserId) => {
-    console.log(currentUserId)
     const payload = getPayload()
     if (!payload) return false
     return currentUserId === payload.sub
@@ -87,6 +89,13 @@ const Book = () => {
     const newReviewsArray = [...reviews.splice(index, 1)]
     setReviews([...reviews])
     history.push(`/books/${id}`)
+  }
+
+
+  const deleteBook = async() => {
+    const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${getTokenFromLocalStorage()}`  }
+    await axios.delete(`/api/books/${id}/`,  { headers: header })
+    history.push('/browse')
   }
 
 
@@ -121,7 +130,7 @@ const Book = () => {
               <p className="text mt-3" >{book.genre}</p>
               <p className="text my-4" id='book_text'>{book.description}</p>
               <p className="text" id='book_text'>First published in {book.publication_year}</p>
-              
+              {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteBook} >Delete book</Button>}
             </div>
           </div>
         </div>
@@ -170,7 +179,7 @@ const Book = () => {
         </div>
         <div className='review_button'>
           {userIsAuthenticated() &&
-          <Button variant='outline-secondary'onClick={addReview}  style={{ height: '45px' }} ><i className="fas fa-plus"></i> Add A review </Button>
+          <Button variant='outline-secondary' onClick={addReview}  style={{ height: '45px' }} ><i className="fas fa-plus"></i> Add A review </Button>
           }
         </div>
       </div>

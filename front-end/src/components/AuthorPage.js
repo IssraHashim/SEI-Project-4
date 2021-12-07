@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { userIsAuthenticated } from '../helpers/auth' 
+import { userIsAuthenticated, getPayload, getTokenFromLocalStorage } from '../helpers/auth' 
 import Cookies from 'js-cookie'
-
+import Button from 'react-bootstrap/Button'
+import AddBook from './AddBook'
 
 const AuthorPage = () => {
   const [liked, setLiked] = useState(false)
   const [author, setAuthor] = useState([])
   const [books, setBooks] = useState([])
+  const [owner, setOwner] = useState([])
+  const [showAdd, setShowAdd] = useState(false)
   const { id } = useParams()
+  const history = useHistory()
   const csrftoken = Cookies.get('csrftoken')
 
 
@@ -23,14 +27,17 @@ const AuthorPage = () => {
       const { data } = await axios.get(`/api/authors/${id}`)
       setAuthor(data)
       setBooks(data.books)
-      const user = getUserData()
+      setOwner(data.owner)
+      const user = await getUserData()
       if (!user) return false
-      if (!data.followers.includes(user.id)) {
-        setLiked(false)
-        return false
-      }
+      data.followers.some( follower => {
+        if (follower.id === user.id) {
+          setLiked(true)
+        }
+      })
     }
     getData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
   const getUserData = async() => {
@@ -65,6 +72,26 @@ const AuthorPage = () => {
     setLiked(!liked)
   }
 
+
+  const addAbook = () => {
+    setShowAdd(!showAdd)
+  }
+
+  const userIsOwner = (currentUserId) => {
+    console.log(currentUserId)
+    const payload = getPayload()
+    if (!payload) return false
+    return currentUserId === payload.sub
+  }
+
+  const deleteAuthor = async() => {
+    const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${getTokenFromLocalStorage()}`  }
+    await axios.delete(`/api/authors/${id}/`,  { headers: header })
+    history.push('/browse')
+  }
+
+
+
   return (
     <>
       <Breadcrumb id='breadcrumb_book'>
@@ -91,11 +118,14 @@ const AuthorPage = () => {
             </div>
             <div className="col-lg-6" id='book_info_column'>
               <h3 className="mt-3" id='book_title'>{author.name}</h3>
-              <p className="text my-4" id='book_text'>{author.biography}</p>            
+              <p className="text my-4" id='book_text'>{author.biography}</p>
+              {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteAuthor} >Delete book</Button>}            
             </div>
           </div>
         </div>
       </section>
+      {userIsAuthenticated() && <Button  variant='outline-secondary' style={{ margin: '20px 0 10px 30px' }} onClick={addAbook}>Add A book from this author</Button>}
+      {showAdd && <AddBook  AuthorId={author.id} setBooks={setBooks} setShowAdd={setShowAdd}/>}
       <Row xs={1} md={4} className="g-4" id='book_display'>
         {books.map((book) => {
           return (

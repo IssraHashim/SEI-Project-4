@@ -145,8 +145,7 @@ const MyNavbar = () => {
                 <>
                   <Navbar.Text>{welcomeBack}</Navbar.Text>
                   <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title={userLogo}  >
-                    <NavDropdown.Item href="#action3">Book Collection</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Follows</NavDropdown.Item>
+                    <NavDropdown.Item ><Link to='/collection'>Your Collection</Link></NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5" onClick={handleLogOut}>
                         Log out
@@ -201,7 +200,7 @@ const MyNavbar = () => {
                       aria-label="Recipient's username"
                       aria-describedby="basic-addon2"
                     />
-                    <Button variant="outline-success" onClick={startNewSearch} >Search</Button>
+                    <Button variant="outline-secondary" onClick={startNewSearch} >Search</Button>
                   </Form>
                 </InputGroup>
               </Col>
