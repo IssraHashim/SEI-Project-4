@@ -22,7 +22,6 @@ const AddReview = ({ id, setShowReview, setReviews }) => {
   })
 
   const handleChange = (event) => {
-    console.log(event.target)
     setFormData( { ...formData, [event.target.name]: event.target.value })
   }
 
@@ -37,12 +36,10 @@ const AddReview = ({ id, setShowReview, setReviews }) => {
       setReviews(data.reviews)
 
     } catch (err) {
-      console.log(err.response.data)
       setErrors(err.response.data)
     }
   }
 
-  console.log(formData)
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

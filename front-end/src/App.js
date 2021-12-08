@@ -8,6 +8,7 @@ import Collection from './components/Collection'
 import Home from './components/Home'
 import MyNavbar from './components/MyNavbar'
 import Register from './components/Register'
+import Settings from './components/Settings'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/browse' component={Browse}/>
+        <Route exact path='/settings' component={Settings}/>
         <Route exact path='/collection' component={Collection}/>
         <Route exact path='/browse/:genre' component={BrowseByGenre}/>
         <Route exact path='/books/:id' component={Book}/>

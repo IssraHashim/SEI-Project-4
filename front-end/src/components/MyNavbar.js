@@ -3,22 +3,18 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
 import Dropdown from 'react-bootstrap/Dropdown'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
 import Logo from '../assets/download.png'
 import Col from 'react-bootstrap/esm/Col'
-import Row from 'react-bootstrap/esm/Row'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/fontawesome-free-solid'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import Register from './Register'
+// import Register from './Register'
 import { userIsAuthenticated } from '../helpers/auth'
 import { useHistory, useLocation, Link } from 'react-router-dom'
-import * as QueryString from 'query-string'
 
 // import { getToken } from '../auth.js'
 
@@ -29,11 +25,10 @@ const MyNavbar = () => {
     password: '',
   } )
 
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
   const [errors, setErrors] = useState(false)
   const [welcomeBack, setWelcomeBack] = useState('')
   const [click, setClick] = useState(false)
-  const [search, setSearch ] = useState({})
   const userLogo = <FontAwesomeIcon icon={faUser} /> 
   const history = useHistory()
   const location = useLocation()
@@ -65,13 +60,7 @@ const MyNavbar = () => {
     setClick(!click)
   }
 
-  const handleSearch = (event) => {
-    setSearch({ ...search, search: event.target.value.toLowerCase() })
-  }
 
-  const startNewSearch = () => {
-    return `?${QueryString.stringify(search)}`
-  }
 
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
@@ -99,14 +88,6 @@ const MyNavbar = () => {
       setErrors(true)
     }
       
-  }
-
-  const handleRegister = () => {
-    setShow(true)
-  }
-
-  const handleClose = () => {
-    setShow(false)
   }
 
   return (
@@ -140,20 +121,21 @@ const MyNavbar = () => {
             </NavDropdown>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
-            <Row >
-              {userIsAuthenticated() ?
-                <>
-                  <Navbar.Text>{welcomeBack}</Navbar.Text>
-                  <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title={userLogo}  >
-                    <NavDropdown.Item ><Link to='/collection'>Your Collection</Link></NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5" onClick={handleLogOut}>
-                        Log out
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </>
-                :
-                <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title='Log in / Register'  >{handleClick &&
+            {userIsAuthenticated() ?
+              <>
+                <Navbar.Text>{welcomeBack}</Navbar.Text>
+                <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title={userLogo}  >
+                  <NavDropdown.Item ><Link to='/collection'>Your Collection</Link></NavDropdown.Item>
+                  <NavDropdown.Item ><Link to='/settings'>Settings</Link></NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action5" onClick={handleLogOut}>
+                      Log out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </>
+              :
+              <>
+                <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title='Log in'  >{handleClick &&
                   <>
                     <Dropdown.Item>
                       <Form >
@@ -179,32 +161,13 @@ const MyNavbar = () => {
                         <Button type="submit" onClick={handleSubmit}>Sign in</Button>
                       </Form>
                     </Dropdown.Item>
-                    <hr/>
-                    <Dropdown.Item>
-                      <p>Not a User? Register now!</p>
-                      <Button onClick={handleRegister}>Register</Button>
-                      {show && <Register handleClose={handleClose} />}
-                    </Dropdown.Item>
                   </>
                 }
                 </NavDropdown>
-              }
-              <Col >
-                <InputGroup>
-                  <Form className="d-flex">
-                    <FormControl
-                      placeholder="Start your search"
-                      className="me-2"
-                      // aria-label="Search"
-                      onChange={handleSearch}
-                      aria-label="Recipient's username"
-                      aria-describedby="basic-addon2"
-                    />
-                    <Link to={`/browse${startNewSearch()}`}><Button variant="outline-secondary" onClick={startNewSearch} >Search</Button></Link>
-                  </Form>
-                </InputGroup>
-              </Col>
-            </Row>
+                <Link to='/register'><Button >Register</Button></Link>
+              </>
+            }
+            
           </Navbar.Collapse>
         </Navbar.Collapse>
       </Container>

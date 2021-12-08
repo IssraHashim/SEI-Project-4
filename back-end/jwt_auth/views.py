@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import PermissionDenied
+from rest_framework.exceptions import NotFound, PermissionDenied
 from datetime import datetime, timedelta
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -49,3 +49,14 @@ class UserProfile(APIView):
             return Response(serialized_user.data, status=status.HTTP_200_OK )
         except:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def delete(self, request):
+        try:
+            user = request.user
+            user_to_delete = User.objects.get(id=user.id)
+            print('USER ----->',user_to_delete)
+        except User.DoesNotExist:
+            raise NotFound()
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+        

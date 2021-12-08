@@ -5,7 +5,7 @@ class User(AbstractUser):
     email = models.CharField(max_length=50, unique=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    profile_image = models.CharField(max_length=300)
+    profile_image = models.CharField(max_length=300, blank=True)
     # liked_authors = models.ManyToManyField(
     #     'authors.Author',
     #     related_name='followers',

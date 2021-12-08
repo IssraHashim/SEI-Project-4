@@ -1,3 +1,4 @@
+from django.db.models.fields import BLANK_CHOICE_DASH
 from .common import UserSerializer
 from books.common import BookSerializer
 from authors.common import AuthorSerializer

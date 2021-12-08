@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col'
 import { userIsAuthenticated, getPayload, getTokenFromLocalStorage } from '../helpers/auth' 
 import Cookies from 'js-cookie'
 import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/esm/Spinner'
 import AddBook from './AddBook'
 
 const AuthorPage = () => {
@@ -41,13 +42,18 @@ const AuthorPage = () => {
   }, [id])
 
   const getUserData = async() => {
-    const token = window.localStorage.getItem('token')
-    if (!token) throw new Error()
-    if (!userIsAuthenticated()) throw new Error()
-    const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${token}`  }
+    try {
+      const token = window.localStorage.getItem('token')
+      if (!token) throw new Error()
+      if (!userIsAuthenticated()) throw new Error()
+      const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${token}`  }
+  
+      const { data } = await axios.get('/api/auth/user', { headers: header })
+      return data
+    } catch (err) {
+      return 
+    }
 
-    const { data } = await axios.get('/api/auth/user', { headers: header })
-    return data
 
   }
 
@@ -94,54 +100,64 @@ const AuthorPage = () => {
 
   return (
     <>
-      <Breadcrumb id='breadcrumb_book'>
-        <Breadcrumb.Item><Link to ='/' style={{ color: 'inherit', textDecoration: 'inherit' }}>Home</Link></Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <Link to ='/browse' style={{ color: 'inherit', textDecoration: 'inherit' }}> 
-          Browse
-          </Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>{author.title}</Breadcrumb.Item>
-      </Breadcrumb>
-      <section className="hero-banner" id='book_banner'>
-        <div className="container" id='book_container'>
-          <div className="row row align-items-center">
-            <div className="col" id='book_image_column'>
-              <div>
-                <img src={author.image} alt={author.image} id='author_image'/>
-              </div>
-              {userIsAuthenticated() && 
-              <div className='my-5'>
-                <a href="#" onClick={(event) => followAuthor(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` }><i className="fas fa-feather-alt"></i> {liked ? ' Following' : ' Follow '} </a>
-              </div>
-              }
-            </div>
-            <div className="col-lg-6" id='book_info_column'>
-              <h3 className="mt-3" id='book_title'>{author.name}</h3>
-              <p className="text my-4" id='book_text'>{author.biography}</p>
-              {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteAuthor} >Delete book</Button>}            
-            </div>
-          </div>
-        </div>
-      </section>
-      {userIsAuthenticated() && <Button  variant='outline-secondary' style={{ margin: '20px 0 10px 30px' }} onClick={addAbook}>Add A book from this author</Button>}
-      {showAdd && <AddBook  AuthorId={author.id} setBooks={setBooks} setShowAdd={setShowAdd}/>}
-      <Row xs={1} md={4} className="g-4" id='book_display'>
-        {books.map((book) => {
-          return (
-            <Col key={book.id}>
-              <Link to={`/books/${book.id}`}>
-                <Card style={{ width: '13rem' }} >
-                  <Card.Img variant="top" src={book.image} />
-                  <Card.Body>
-                    <Card.Title style={{ fontSize: '15px' , fontWeight: '700' }}>{book.title}</Card.Title>
-                  </Card.Body>
-                </Card>
+      { author.name ? 
+        <>
+          <Breadcrumb id='breadcrumb_book'>
+            <Breadcrumb.Item><Link to ='/' style={{ color: 'inherit', textDecoration: 'inherit' }}>Home</Link></Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <Link to ='/browse' style={{ color: 'inherit', textDecoration: 'inherit' }}> 
+              Browse
               </Link>
-            </Col>
-          )
-        })}
-      </Row>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item active>{author.title}</Breadcrumb.Item>
+          </Breadcrumb>
+          <section className="hero-banner" id='book_banner'>
+            <div className="container" id='book_container'>
+              <div className="row row align-items-center">
+                <div className="col" id='book_image_column'>
+                  <div>
+                    <img src={author.image} alt={author.image} id='author_image'/>
+                  </div>
+                  {userIsAuthenticated() && 
+                  <div className='my-5'>
+                    <a href="#" onClick={(event) => followAuthor(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` }><i className="fas fa-feather-alt"></i> {liked ? ' Following' : ' Follow '} </a>
+                  </div>
+                  }
+                </div>
+                <div className="col-lg-6" id='book_info_column'>
+                  <h3 className="mt-3" id='book_title'>{author.name}</h3>
+                  <p className="text my-4" id='book_text'>{author.biography}</p>
+                  {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteAuthor} >Delete book</Button>}            
+                </div>
+              </div>
+            </div>
+          </section>
+          {userIsAuthenticated() && <Button  variant='outline-secondary' style={{ margin: '20px 0 10px 30px' }} onClick={addAbook}>Add A book from this author</Button>}
+          {showAdd && <AddBook  AuthorId={author.id} setBooks={setBooks} setShowAdd={setShowAdd}/>}
+          <Row xs={1} md={4} className="g-4" id='book_display'>
+            {books.map((book) => {
+              return (
+                <Col key={book.id}>
+                  <Link to={`/books/${book.id}`}>
+                    <Card style={{ width: '13rem' }} >
+                      <Card.Img variant="top" src={book.image} />
+                      <Card.Body>
+                        <Card.Title style={{ fontSize: '15px' , fontWeight: '700' }}>{book.title}</Card.Title>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              )
+            })}
+          </Row>
+        </>
+        :
+        <div id='loading_state'>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden" >Loading...</span>
+          </Spinner>
+        </div>
+      }
     </>
   )
 }
