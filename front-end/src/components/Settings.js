@@ -42,25 +42,30 @@ const Settings = () => {
   return (
     <>
       { userData.email ? 
-        <>
-          <h2>settings</h2>
+        <section style={{ height: '635px' }}>
+          <br/>
+          <h2 style={{ textAlign: 'center', padding: '30px 0 100px 0' }}>Your Bookopedia Settings</h2>
           <div>
-            <h4>Email: {userData.email}</h4>
-            <hr/>
-            <h4>Username: {userData.username}</h4>
-            <hr/>
-            <Button onClick={() => setShow(!show)}>Delete your Account</Button>
+            <h4 style={{ textAlign: 'center', padding: '20px 0 20px 0' }}>Email :  {userData.email}</h4>
+            <hr style={{ color: 'darkgrey' }}/>
+            <h4 style={{ textAlign: 'center', padding: '20px 0 20px 0' }}>Username : {userData.username}</h4>
+            <hr style={{ color: 'darkgrey' }}/>
+            <div id='delete_account_button'>
+              <Button id='settings_delete_button' onClick={() => setShow(!show)}>Delete your Account</Button>
+            </div>
             {show && 
         <>
-          <p>Are you sure you want to delete your account at Bookopedia?</p>
-          <Button onClick={handleDelete}>Yes</Button>
-          <Button onClick={()=> setShow(false) }>No</Button>
+          <p style={{ textAlign: 'center', padding: '10px 0 10px 0' }}>Are you sure you want to delete your account at Bookopedia?</p>
+          <div id='delete_account_button'>
+            <Button  id='settings_delete_button' onClick={handleDelete}>Yes</Button>
+            <Button  id='settings_delete_button' onClick={()=> setShow(false) }>No</Button>
+          </div>
         </>
             }
           </div>
-        </>
+        </section>
         :
-        <div id='loading_state'>
+        <div id='loading_state' style={{ height: '635px' }}>
           <Spinner animation="border" role="status">
             <span className="visually-hidden" >Loading...</span>
           </Spinner>

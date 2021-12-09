@@ -132,23 +132,32 @@ const Book = () => {
             <div className="container" id='book_container'>
               <div className="row row align-items-center">
                 <div className="col" id='book_image_column'>
-                  <div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <img src={book.image} alt={book.image} id='book_image'/>
                   </div>
                   {userIsAuthenticated() && 
-                  <div className='my-5' style={{ margin: '25px' }}>
+                  <div className='my-5' style={{ margin: '25px', display: 'flex', flexDirection: 'column' }}>
                     <a href="#" onClick={(event) => addtoCollection(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` }><i className="fas fa-book"></i> {liked ? ' Added to your collection' : ' Add to collection'} </a>
+                    { userIsOwner(owner.id) && 
+                    <>
+                      <br/>
+                      <Button variant='btn btn-outline-light border' onClick={deleteBook} >Delete book
+                      </Button>
+                    </>
+                    }
                   </div>
                   }
                 </div>
                 <div className="col-lg-6" id='book_info_column'>
                   <h3 className="mt-3" id='book_title'>{book.title}</h3>
-                  <Link to ={`/author/${author.id}`}><h5 style={{ marginTop: '15px', textDecoration: 'underline' }}>{author.name}</h5></Link>
-                  <p className="text" id='book_text'>First published in {book.publication_year}</p>
+
+                  <Link to ={`/author/${author.id}`}><h5 style={{ marginTop: '20px', textDecoration: 'underline' }}>{author.name}</h5></Link>
+                  <p className="text" id='book_text' >First published in {book.publication_year}</p>
+                  <br/>
                   <p  id='book_text'>{book.description}</p>
+                  <br/>
                   <Link to={`/browse/${book.genre}`}><p  id='book_show_genre'>{book.genre}</p></Link>
                   {reviews.length > 0 && <p className="text" id='book_text'> Rating {rating} <i className="fas fa-star"></i></p>}
-                  {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteBook} >Delete book</Button>}
                 </div>
               </div>
             </div>
@@ -203,7 +212,7 @@ const Book = () => {
           </div>
         </>
         :
-        <div id='loading_state'>
+        <div id='loading_state' style={{ height: '635px' }}>
           <Spinner animation="border" role="status">
             <span className="visually-hidden" >Loading...</span>
           </Spinner>

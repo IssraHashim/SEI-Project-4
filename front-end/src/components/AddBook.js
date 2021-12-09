@@ -59,7 +59,7 @@ const AddBook = ({ AuthorId, setBooks, setShowAdd }) => {
 
   
   return (
-    <Form onSubmit={handleSubmit} >
+    <Form onSubmit={handleSubmit} id='add_author_form'>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" rows={3} name='title' value={formData.title} onChange={handleChange} isInvalid={errors.title}/>
@@ -85,6 +85,7 @@ const AddBook = ({ AuthorId, setBooks, setShowAdd }) => {
           <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '40px' }}>
             <Image src={formData.image} alt='image' id='book_image_add' />
           </div>}
+      <br/>
       <Form.Group  controlId="validationFormikUsername">
         <Form.Label>First Publication Year</Form.Label>
         <Form.Control
@@ -101,6 +102,7 @@ const AddBook = ({ AuthorId, setBooks, setShowAdd }) => {
         </Form.Control.Feedback>
         }
       </Form.Group>
+      <br/>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Description</Form.Label>
         <Form.Control as="textarea" rows={3} name='description' value={formData.description} onChange={handleChange} isInvalid={errors.description}/>
@@ -135,6 +137,8 @@ const AddBook = ({ AuthorId, setBooks, setShowAdd }) => {
         </Form.Control.Feedback>
         }
       </Form.Group>
+      <br/>
+      <br/>
       <div className="d-grid gap-2">
         <Button variant="outline-secondary" type="submit" >
         Add

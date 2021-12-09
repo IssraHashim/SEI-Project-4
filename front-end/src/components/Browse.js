@@ -34,7 +34,6 @@ const Browse = () => {
       setBooks(data)
       setAllBooks(data)
       const allreviews = data.map(book => book.reviews)
-      // setReviews(allreviews)
       getRatings(allreviews)
       const newArray = []
       for (let i = 0; i < data.length; i++) {
@@ -106,13 +105,15 @@ const Browse = () => {
     }
 
   }
+
+
   return (
     <>
       { books.length ? 
         <>
           <br/>
-          <h4 style={{ padding: '20px' }}>Browse by Genre</h4>
-          <hr style={{ color: 'lightgrey' }}/>
+          <h4 style={{ padding: '20px 0 20px 60px' }}>Browse by Genre</h4>
+          <hr style={{ color: 'darkgrey' }}/>
           <br/>
           <Row id='genre_cards'>
             {genres.map(book => {
@@ -140,13 +141,12 @@ const Browse = () => {
                           <Card.Img variant="top" src={book.image} />
                           <Card.Body>
                             <Card.Title>{book.title}</Card.Title>
-                            <Card.Text>
+                            <Card.Text style ={{ fontStyle: 'italic', fontSize: '15px' }}>
                               {book.author.name}
+                              <br/>
+                              {book.reviews.length} Reviews
                             </Card.Text>
                           </Card.Body>
-                          <Card.Footer>
-                            <small className="text-muted">{book.reviews.length} Reviews</small>
-                          </Card.Footer>
                         </Link>
                       </Card>
                     )
@@ -225,7 +225,7 @@ const Browse = () => {
                               <Card.Img variant="top" src={book.image} id='browse_book_image'/>
                               <Card.Body>
                                 <Card.Title>{book.title}</Card.Title>
-                                <Card.Text className='text-muted' style ={{ fontStyle: 'italic' }}>
+                                <Card.Text className='text-muted' style ={{ fontStyle: 'italic', fontSize: '15px' }}>
                                   {book.author.name}
                                   <br/>
                                   {book.reviews.length} Reviews
@@ -244,7 +244,7 @@ const Browse = () => {
         </>
         :
         <>
-          <div id='loading_state'>
+          <div id='loading_state' style={{ height: '635px' }}>
             <Spinner animation="border" role="status">
               <span className="visually-hidden" >Loading...</span>
             </Spinner>

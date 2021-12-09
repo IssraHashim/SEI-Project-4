@@ -47,7 +47,7 @@ const AddanAuthor = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} id='add_author_form'>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" rows={3} name='name' value={formData.name} onChange={handleChange} isInvalid={errors.name}/>
@@ -63,6 +63,7 @@ const AddanAuthor = () => {
           name="image"
           handleImageUrl={handleImageUrl}
           isInvalid={errors.image}
+
         />
         {errors.image && <Form.Control.Feedback type="invalid">
           {errors.image}
@@ -73,6 +74,7 @@ const AddanAuthor = () => {
           <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '40px' }}>
             <Image src={formData.image} alt='image' id='book_image_add' />
           </div>}
+      <br/>
       <Form.Group  controlId="validationFormikUsername">
         <Form.Label>Biography</Form.Label>
         <Form.Control
@@ -87,6 +89,8 @@ const AddanAuthor = () => {
         </Form.Control.Feedback>
         }
       </Form.Group>
+      <br/>
+      <br/>
       <div className="d-grid gap-2">
         <Button variant="outline-secondary" type="submit" >
         Add

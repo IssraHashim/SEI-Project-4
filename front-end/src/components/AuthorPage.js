@@ -4,7 +4,6 @@ import axios from 'axios'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import { userIsAuthenticated, getPayload, getTokenFromLocalStorage } from '../helpers/auth' 
 import Cookies from 'js-cookie'
 import Button from 'react-bootstrap/Button'
@@ -111,7 +110,7 @@ const AuthorPage = () => {
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{author.title}</Breadcrumb.Item>
           </Breadcrumb>
-          <section className="hero-banner" id='book_banner'>
+          <section className="hero-banner" id='book_banner' style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url(${author.image})` }}>
             <div className="container" id='book_container'>
               <div className="row row align-items-center">
                 <div className="col" id='book_image_column'>
@@ -134,25 +133,24 @@ const AuthorPage = () => {
           </section>
           {userIsAuthenticated() && <Button  variant='outline-secondary' style={{ margin: '20px 0 10px 30px' }} onClick={addAbook}>Add A book from this author</Button>}
           {showAdd && <AddBook  AuthorId={author.id} setBooks={setBooks} setShowAdd={setShowAdd}/>}
-          <Row xs={1} md={4} className="g-4" id='book_display'>
+          <Row xs={1} md={4} className="g-4" id='book_display2'>
             {books.map((book) => {
               return (
-                <Col key={book.id}>
+                <Card style={{ width: '13rem' }} key={book.id} id='books_card'>
                   <Link to={`/books/${book.id}`}>
-                    <Card style={{ width: '13rem' }} >
-                      <Card.Img variant="top" src={book.image} />
-                      <Card.Body>
-                        <Card.Title style={{ fontSize: '15px' , fontWeight: '700' }}>{book.title}</Card.Title>
-                      </Card.Body>
-                    </Card>
+                    <Card.Img variant="top" src={book.image} />
+                    <Card.Body>
+                      <Card.Title style={{ fontSize: '15px' , fontWeight: '700' }}>{book.title}</Card.Title>
+                    </Card.Body>
                   </Link>
-                </Col>
+                </Card>
+                // </Col>
               )
             })}
           </Row>
         </>
         :
-        <div id='loading_state'>
+        <div id='loading_state' style={{ height: '635px' }}>
           <Spinner animation="border" role="status">
             <span className="visually-hidden" >Loading...</span>
           </Spinner>

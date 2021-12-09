@@ -137,34 +137,34 @@ const MyNavbar = () => {
               <>
                 <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title='Log in'  >{handleClick &&
                   <>
-                    <Dropdown.Item>
-                      <Form >
-                        <Form.Group as={Col} className="mb-3" controlId="formPlaintextEmail">
+                    <Dropdown.Item style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', backgroundColor: '#d8c3a5fa' }}>
+                      <Form style={{ width: '310px', display: 'flex', flexDirection: 'column', alignItems: 'start', paddingTop: '10px' }}>
+                        <Form.Group as={Col} className="mb-3" controlId="formPlaintextEmail" >
                           <Form.Label column sm="2">
                             Email
-                          </Form.Label>
-                          <Col sm="10">
+                          </Form.Label >
+                          <Col sm="10" style={{ width: '280px' }}>
                             <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} value={formData.email}/>
                             {errors && <p>your username or password is incorrect</p>}
 
                           </Col>
                         </Form.Group>
-                        <Form.Group as={Col} className="mb-3" controlId="formPlaintextPassword">
+                        <Form.Group as={Col} className="mb-3" controlId="formPlaintextPassword" >
                           <Form.Label column sm="2">
                             Password
                           </Form.Label>
-                          <Col sm="10">
+                          <Col sm="10" style={{ width: '280px' }}>
                             <Form.Control type="password" placeholder="Password" name='password' onChange={handleChange} value={formData.password}/>
                             {errors && <p>your username or password is incorrect</p>}
                           </Col>
                         </Form.Group>
-                        <Button type="submit" onClick={handleSubmit}>Sign in</Button>
+                        <Button type="submit" variant="outline-secondary"  id='book_delete_button' style={{ marginTop: '20px' }} onClick={handleSubmit}>Sign in</Button>
                       </Form>
                     </Dropdown.Item>
                   </>
                 }
                 </NavDropdown>
-                <Link to='/register'><Button >Register</Button></Link>
+                <Link to='/register'><Button variant="outline-secondary" >Register</Button></Link>
               </>
             }
             
