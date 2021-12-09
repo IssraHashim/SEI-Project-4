@@ -59,7 +59,7 @@ const AddBook = ({ AuthorId, setBooks, setShowAdd }) => {
 
   
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} >
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" rows={3} name='title' value={formData.title} onChange={handleChange} isInvalid={errors.title}/>

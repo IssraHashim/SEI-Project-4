@@ -41,10 +41,10 @@ const AddReview = ({ id, setShowReview, setReviews }) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} id='add_review_form'>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Review</Form.Label>
-        <Form.Control as="textarea" rows={3} name='review' value={formData.review} onChange={handleChange} isInvalid={errors.review}/>
+        <Form.Control style={{ backgroundColor: '#EAE7DC' }} as="textarea" rows={3} name='review' value={formData.review} onChange={handleChange} isInvalid={errors.review}/>
         {errors.review && <Form.Control.Feedback type="invalid">
           {errors.review}
         </Form.Control.Feedback>

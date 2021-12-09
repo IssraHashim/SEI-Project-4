@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 import Dropdown from 'react-bootstrap/Dropdown'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
-import Logo from '../assets/download.png'
+import Logo from '../assets/download-1.png'
 import Col from 'react-bootstrap/esm/Col'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/fontawesome-free-solid'
@@ -91,7 +91,7 @@ const MyNavbar = () => {
   }
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar id='navbar_full' expand="lg">
       <Container fluid>
         <Navbar.Brand> 
           <Link to='/'>
@@ -110,10 +110,10 @@ const MyNavbar = () => {
             navbarScroll
           >
             <Nav.Link><Link to="/browse" style={{ color: 'inherit', textDecoration: 'inherit' }}>Browse</Link></Nav.Link>
-            <NavDropdown variant="light"autoClose="outside" title='Genre'       id="dropdown-menu-align-responsive-1"> 
+            <NavDropdown variant="light"autoClose="outside" title='Genre'       id="dropdown-menu-align-responsive-1" > 
               {genres.map(book => {
                 return (
-                  <NavDropdown.Item key={book.id} className='mb-0 pb-0'>
+                  <NavDropdown.Item key={book.id} className='mb-0 pb-0' >
                     <Link to={`/browse/${book.genre}`} style={{ color: 'inherit', textDecoration: 'inherit' }} ><Col key={book.id} id='genre_popover'>{book.genre}</Col></Link>
                   </NavDropdown.Item>
                 )
@@ -124,7 +124,7 @@ const MyNavbar = () => {
             {userIsAuthenticated() ?
               <>
                 <Navbar.Text>{welcomeBack}</Navbar.Text>
-                <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title={userLogo}  >
+                <NavDropdown autoClose="outside" id="dropdown-autoclose-outside" align="end" className='logindropdown' onClick={handleClick} title={userLogo} >
                   <NavDropdown.Item ><Link to='/collection'>Your Collection</Link></NavDropdown.Item>
                   <NavDropdown.Item ><Link to='/settings'>Settings</Link></NavDropdown.Item>
                   <NavDropdown.Divider />

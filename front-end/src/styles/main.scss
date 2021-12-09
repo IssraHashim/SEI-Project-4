@@ -1,7 +1,7 @@
 * {
   font-family: 'Inter', sans-serif;
-  // background-color: rgba(248, 240, 240, 0.89);
 }
+
 
 .logindropdown {
   display: flex;
@@ -11,14 +11,22 @@
 #genre_cards, #book_display {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
+#genre_cards {
+  justify-content: center;
+}
 #genre_card {
   width: calc(24% - 20px);
   padding: 0 40px;
   border: none;
   text-decoration: underline;
+  background: #EAE7DC
+}
+
+#root {
+  background-color: #EAE7DC;
+  margin: #EAE7DC;  
 }
 
 #genre_image {
@@ -28,41 +36,56 @@
   
 }
 
-#books_card {
-  width: calc(23% - 20px);
-  border: none
 
+#books_card {
+  width: calc(33.33%);
+  border: none;
+  flex-grow: 0;
+  background: #EAE7DC
 }
 
 #book_image_column {
   padding-top: 20px;
   width:30%;
-  padding: 30px 0;
-  color:white
+  padding: 20px 0;
+  color:#EAE7DC
 }
 
 #book_info_column {
   width: 70%;
-  color: rgb(248, 242, 232);
+  color: #EAE7DC;
+  padding: 0 0 0 40px;
 }
 
 #book_image {
-  width: 60%
+  width: 60%;
+  margin: 25px;
 }
 
 #book_banner {
-  background-color:#44433dda;
-  color: rgb(248, 242, 232);
+  background-size: cover;
+  background-position: center top;
+  font-weight: 900;
 }
 
 #book_text {
   font-style: italic;
-  font-size: 15px;
+  font-size: 14px;
+  text-align: justify;
+  margin-top: 18px;
 }
 
 #book_title {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 32px;
+}
+
+#book_show_genre {
+  border: solid 1px;
+  width: fit-content;
+  padding: 5px 14px;
+  border-radius: 18px;
+  background-color: #d8c3a5c4;
 }
 
 #breadcrumb_book {
@@ -87,7 +110,6 @@
 }
 
 #reviews_column {
-  // display: flex;
   width: 80%;
 }
 
@@ -95,7 +117,7 @@
   display: flex;
   width: 20%;
   justify-content: space-evenly;
-  padding-top: 10px;
+  padding: 15px;
 
 }
 
@@ -105,7 +127,8 @@
 }
 
 #book_display {
-  padding: 30px 30px
+  padding: 30px 170px;
+  justify-content: space-between;
 }
 
 #book_image_add {
@@ -153,7 +176,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
+  padding: 49px;
 }
 
 
@@ -163,6 +186,52 @@
 
 
 #browse_filter_column {
-  width: 100%;
+  padding: 30px 0 0 30px;
+}
+
+#browse_book_image {
+  width: 85%;
+}
+
+a {
+  color:inherit !important;
+  text-decoration: none !important;
+}
+
+#book_no_review_text {
+  text-align: center;
+  padding: 22px
+}
+
+.accordion-item:first-of-type .accordion-button, .accordion-button:not(.collapsed), .accordion-button {
+  background-color: #D8C3A5 !important;
+  color: #8E8D8A !important;
+}
+
+.accordion-item {
+  background-color: #EAE7DC !important;
+  color: #8E8D8A !important;
+}
+
+#book_delete_button {
+  border-radius: 25px;
+  padding: 10px 100px;
+  margin: 20px;
+  background-color: #8E8D8A;
+  color: #EAE7DC;
+  border-width: 0;
+}
+
+#add_review_form {
   padding: 30px;
+}
+
+#navbar_full {
+  background-color: #d8c3a594;
+  color: #E98074;
+  padding: 0
+}
+
+.dropdown-menu.show {
+  background-color: #d8c3a5fa;
 }

@@ -92,6 +92,7 @@ const Home = () => {
               onChange={handleSearch}
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              style={{ backgroundColor: '#d8c3a561' }}
             />
             <Link to={`/browse${startNewSearch()}`}><Button variant="outline-secondary" onClick={startNewSearch} >Search</Button></Link>
           </Form>

@@ -87,8 +87,8 @@ const Browse = () => {
     } else if (event.target.name === '5') {
       setChecked5(!checked5)
     }
-    if (checked || checked2  || checked3 || checked4 || checked5) {
-      console.log('this is true')
+
+    if (!checked && !checked2  && !checked3 && !checked4 && !checked5) {
       const newBooksArray = []
       for (let i = 0; i < ratings.length; i++) {
         if (ratings[i][1] >= event.target.name ) {
@@ -106,8 +106,6 @@ const Browse = () => {
     }
 
   }
-  
-  console.log(checked4)
   return (
     <>
       { books.length ? 
@@ -217,14 +215,14 @@ const Browse = () => {
                   </div>
                 </div>
 
-                <div>
+                <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
                   <CardGroup id='books-cards'>
                     <Row xs={1} md={4} className="g-4" id='book_display'>
                       {books.map(book => {
                         return (
                           <Card key={book.id} id='books_card' >
                             <Link to={`/books/${book.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                              <Card.Img variant="top" src={book.image} />
+                              <Card.Img variant="top" src={book.image} id='browse_book_image'/>
                               <Card.Body>
                                 <Card.Title>{book.title}</Card.Title>
                                 <Card.Text className='text-muted' style ={{ fontStyle: 'italic' }}>

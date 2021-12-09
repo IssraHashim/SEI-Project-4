@@ -128,7 +128,7 @@ const Book = () => {
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{book.title}</Breadcrumb.Item>
           </Breadcrumb>
-          <section className="hero-banner" id='book_banner'>
+          <section className="hero-banner" id='book_banner' style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7) ), url(${book.image})` }}>
             <div className="container" id='book_container'>
               <div className="row row align-items-center">
                 <div className="col" id='book_image_column'>
@@ -136,17 +136,17 @@ const Book = () => {
                     <img src={book.image} alt={book.image} id='book_image'/>
                   </div>
                   {userIsAuthenticated() && 
-                  <div className='my-5'>
+                  <div className='my-5' style={{ margin: '25px' }}>
                     <a href="#" onClick={(event) => addtoCollection(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` }><i className="fas fa-book"></i> {liked ? ' Added to your collection' : ' Add to collection'} </a>
                   </div>
                   }
                 </div>
                 <div className="col-lg-6" id='book_info_column'>
                   <h3 className="mt-3" id='book_title'>{book.title}</h3>
-                  <Link to ={`/author/${author.id}`}><h5 className="mt-3">By {author.name}</h5></Link>
-                  <p className="text mt-3" >{book.genre}</p>
-                  <p className="text my-4" id='book_text'>{book.description}</p>
+                  <Link to ={`/author/${author.id}`}><h5 style={{ marginTop: '15px', textDecoration: 'underline' }}>{author.name}</h5></Link>
                   <p className="text" id='book_text'>First published in {book.publication_year}</p>
+                  <p  id='book_text'>{book.description}</p>
+                  <Link to={`/browse/${book.genre}`}><p  id='book_show_genre'>{book.genre}</p></Link>
                   {reviews.length > 0 && <p className="text" id='book_text'> Rating {rating} <i className="fas fa-star"></i></p>}
                   {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteBook} >Delete book</Button>}
                 </div>
@@ -162,14 +162,14 @@ const Book = () => {
                   if (userIsOwner(review.owner.id)) {
                     return (
                       <Accordion.Item eventKey="0" key={review.id}>
-                        <Accordion.Header>{review.owner.username} - Reviewed on {newCreated} 
+                        <Accordion.Header style={{ color: 'white' }} id='book_review_accordion_header'>{review.owner.username} - Reviewed on {newCreated} 
                         </Accordion.Header>
                         <Accordion.Body>
                           {review.review}
                           <hr/>
                           {review.rating}
                         </Accordion.Body>
-                        <Button onClick={() => deleteReview(review.id, review)}>Delete</Button>
+                        <Button id='book_delete_button' onClick={() => deleteReview(review.id, review)}>Delete</Button>
                       </Accordion.Item>
                     )
                   }
@@ -187,7 +187,7 @@ const Book = () => {
                 })
                   :
                   <>
-                    <div>This book has no reviews. Want to be the first one to add a review?</div>
+                    <div id='book_no_review_text'>This book has no reviews. Want to be the first one to add a review?</div>
                     {!userIsAuthenticated() &&
                     <Button>Register</Button>}
                   </>
@@ -197,7 +197,7 @@ const Book = () => {
             </div>
             <div className='review_button'>
               {userIsAuthenticated() &&
-              <Button variant='outline-secondary' onClick={addReview}  style={{ height: '45px' }} ><i className="fas fa-plus"></i> Add A review </Button>
+              <Button variant='outline-secondary' onClick={addReview}  style={{ height: '40px', borderRadius: '5px' }} ><i className="fas fa-plus"></i> Add A review </Button>
               }
             </div>
           </div>
