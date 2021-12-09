@@ -83,6 +83,7 @@ const AddanAuthor = () => {
           value={formData.biography}
           onChange={handleChange}
           isInvalid={errors.biography}
+          style={{ height: '150px' }}
         />
         {errors.biography && <Form.Control.Feedback type="invalid">
           {errors.biography}

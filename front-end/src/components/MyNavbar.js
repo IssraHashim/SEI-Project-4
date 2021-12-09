@@ -164,7 +164,7 @@ const MyNavbar = () => {
                   </>
                 }
                 </NavDropdown>
-                <Link to='/register'><Button variant="outline-secondary" >Register</Button></Link>
+                <Link to='/register'><Button variant="outline" id='book_register_button' >Register</Button></Link>
               </>
             }
             

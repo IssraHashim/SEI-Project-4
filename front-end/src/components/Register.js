@@ -62,13 +62,12 @@ const Register = ({ handleClose }) => {
   }
 
 
-  console.log(formData)
   return (
-    <div show={show} placement='end' onHide={handleClose} >
+    <div show={show} placement='end' onHide={handleClose} id='add_author_form' >
       <div closeButton>
-        <div>Register</div>
+        <div style={{ padding: '20px 0 20px 60px', fontSize: '30px' }}>Register</div>
       </div>
-      <Form noValidate onSubmit={handleSubmit} id='register_form'>
+      <Form noValidate onSubmit={handleSubmit} id='add_author_form'  >
         <div>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="validationFormik01">
@@ -90,6 +89,7 @@ const Register = ({ handleClose }) => {
               />
             </Form.Group>
           </Row>
+          <br/>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="validationFormikUsername">
               <Form.Label>Username</Form.Label>
@@ -127,8 +127,9 @@ const Register = ({ handleClose }) => {
               </InputGroup>
             </Form.Group>
           </Row>
+          <br/>
           <Row className="mb-3">
-            <Form.Group as={Col} md="3" controlId="validationFormik05">
+            <Form.Group as={Col} controlId="validationFormik05">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -138,7 +139,6 @@ const Register = ({ handleClose }) => {
                 onChange={handleChange}
                 isInvalid={errors.password}
               />
-
               <Form.Control.Feedback type="invalid">
                 {errors.password}
               </Form.Control.Feedback>
@@ -158,20 +158,13 @@ const Register = ({ handleClose }) => {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          <Form.Group >
-            <Form.Check
-              required
-              name="terms"
-              type="checkbox"
-              label="Sign up to our weekly newsletter to keep up with new reviews and books"
-              onChange={handleChange}
-              id="validationFormik0"
-            />
-          </Form.Group>
+          
         </div>
+        <br/>
         <Row className="mb-3">
           <div as={Col} md="3" controlId="validationFormik04">
             <Form.Label>Profile Picture</Form.Label>
+            <br/>
             <ImageUploadField
               value={formData.profile_image}
               name="profile_image"
@@ -182,12 +175,24 @@ const Register = ({ handleClose }) => {
               {errors.profile_image}
             </Form.Control.Feedback>
             {formData.profile_image &&
-              <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: '40px' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-start', paddingTop: '40px' }}>
                 <Image src={formData.profile_image} alt='image' id='profile_image' />
               </div>}
           </div>
         </Row>
-        <Button Button type="submit" onClick={handleSubmit}>Submit form</Button>
+        <br/>
+        <Form.Group >
+          <Form.Check
+            required
+            name="terms"
+            type="checkbox"
+            label="Sign up to our weekly newsletter to keep up with new reviews and books"
+            onChange={handleChange}
+            id="validationFormik0"
+          />
+        </Form.Group>
+        <br/>
+        <Button variant="outline-secondary" type="submit" onClick={handleSubmit}>Submit form</Button>
       </Form>
     </div>
 

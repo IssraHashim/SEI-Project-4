@@ -196,9 +196,8 @@ const Book = () => {
                 })
                   :
                   <>
-                    <div id='book_no_review_text'>This book has no reviews. Want to be the first one to add a review?</div>
-                    {!userIsAuthenticated() &&
-                    <Button>Register</Button>}
+                    <p id='book_no_review_text'>This book has no reviews. Want to be the first one to add a review?</p>
+                    {!userIsAuthenticated() && <Link to='/register'><p style={{ textAlign: 'start', margin: '-50px 0 100px 50px', textDecoration: 'underline' }}>Create your account today</p></Link>}
                   </>
                 }
                 

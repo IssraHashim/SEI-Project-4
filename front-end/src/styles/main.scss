@@ -21,12 +21,14 @@
   padding: 0 40px;
   border: none;
   text-decoration: underline;
-  background: #EAE7DC
+  background: #EAE7DC;
+  
 }
 
 #root {
   background-color: #EAE7DC;
   margin: #EAE7DC;  
+  color: #81807d;
 }
 
 #genre_image {
@@ -200,8 +202,8 @@ a {
 }
 
 #book_no_review_text {
-  text-align: center;
-  padding: 22px 0 55px 22px;
+  text-align: start;
+  padding: 40px 0 55px 50px;
 }
 
 .accordion-item:first-of-type .accordion-button, .accordion-button:not(.collapsed), .accordion-button {
@@ -227,7 +229,7 @@ a {
   padding: 30px;
 }
 #add_author_form {
-  padding: 40px 60px;
+  padding: 40px 130px;
 }
 #navbar_full {
   background-color: #d8c3a594;
@@ -254,5 +256,16 @@ a {
   display: flex;
   justify-content: center;
   margin: 20px 0 0px 0;
+}
+
+#book_register_button {
+  border-color: #E98074;
+  color: #E98074;
+  margin: 0 30px;
+}
+
+#book_register_button:hover {
+  background-color: #E98074;
+  color: #EAE7DC;
 }
 
