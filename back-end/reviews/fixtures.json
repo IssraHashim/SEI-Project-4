@@ -1,0 +1,178 @@
+[
+{
+  "model": "reviews.review",
+  "pk": 6,
+  "fields": {
+    "book": 32,
+    "review": "Tintin finds himself entangled in another adventure when suddenly the vehicles all over the country start blowing up. The petrol is suspected to be doctored, but by who and for what purpose? With a mind to find answers to this riddle Tintin heads to the Middle East, the land of the \"Black Gold (oil)\".\r\n\r\nThe plot isn't neatly arranged. It is more like a patched up series of actions. There was enough humour though with the mishaps almost always meet the Thompsons and the childish pranks of the young prince, Abdullah, and they keep you laughing throughout. This adventure sees Tintin and Snowy alone in their quest with only partial assistance of Professor Calculus and Captain Haddock. The latter character, in my view, was just added in haste to the story with no plausible cause.\r\n\r\nOverall, this isn't one of my favourite Tintin adventures but still was an enjoyable read.",
+    "created_at": "2021-12-02T16:32:25.236Z",
+    "rating": 3,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 7,
+  "fields": {
+    "book": 32,
+    "review": "Another wonderful adventure of tintin!! This used to be one of my favorite toons during my childhood!!\r\n\r\nIn this adventure, tintin has got more of physical than his holmes' style!! Haddock was as usual!! Snowy has got a bit lesser role!! Thompson n Thomson are always a comic relief!! But the role of abdullah was hilarious! It will create a serious of troubles n laughters in this episode!!\r\n\r\nOn the whole this can be rated as one of the best episodes of the entire adventures of tintin!!",
+    "created_at": "2021-12-02T16:32:53.678Z",
+    "rating": 5,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 8,
+  "fields": {
+    "book": 29,
+    "review": "'Red Packham's Treasure' follows directly on from 'The Secret of the Unicorn'. Tintin and Captain Haddock found all the clues to where the treasure is, now they just have to get there and recover it.\r\n\r\nProfessor Calculus is introduced to the series here. He is a deaf old bugger who invents things. Pretty much sums it up. The humour is in what he thinks the person has said and his response. It really pisses Captain Haddock off.\r\n\r\nThompson and Thomson are along for the ride. They take leave from their jobs to lend a hand and end up doing all the manual labour on board the ship. They are well and truly earning their keep.\r\n\r\nFor entertainment purposes there's monkeys with a loaded gun, a population of parrots that has passed down Haddock swearing for generations and Tintin fighting a shark. Of course, it makes some sense, but like all Tintin's there's hints of stuff early on that are just not carried on and are weirdly out there. But that's part of the charm.\r\n\r\nSo definitely core Tintin. It couples well with the story before it and both would make the logical introductory Tintin's for a new reader.",
+    "created_at": "2021-12-02T16:33:44.051Z",
+    "rating": 4,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 9,
+  "fields": {
+    "book": 29,
+    "review": "I think this is my favorite Tintin book. Well ... one of them, anyway. ;)",
+    "created_at": "2021-12-02T16:34:07.050Z",
+    "rating": 5,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 10,
+  "fields": {
+    "book": 29,
+    "review": "I would suggest that this is the last of the war novels, though by the time that this was released the war was almost over (I believe Belgium had been at least partially liberated, and Hitler and the Japanese were on the back foot, though there was still a lot of war to fight at this stage). Most of the album takes place at sea (which is similar to the other war albums) and it noticeably has no antagonist - it is purely a treasure hunt. While the threat of the Bird Brothers still hangs in the background, they do not make an appearance.\r\n\r\nThis album also brings in the last of the major Tintin characters: Professor Cuthbert Calculus. He appears just after a group of would be treasure hunters (all claiming to be descendants of Red Rackham) appear at Tintin's door wanting a piece of the action. However, Calculus arrives a little later offering use of his submarine. Right from the beginning we discover that while Calculus claims to be 'a little hard of hearing' in reality he has selective hearing, namely he only hears what he wants to hear.\r\n\r\nUp until this point most of the scientists that Tintin had encountered have been eccentric, however Calculus, becoming a major character, becomes the eccentric scientist and all of the scientists that appear afterwards tend to be much more level headed. Thus it appears that Herge's quest for an eccentric scientist has come to an end and his cast list is complete.\r\n\r\nAs mentioned, most of the war albums take place at sea, and this is no exception. Tintin sails off in search of the treasure, and all of the important characters (the Thompson Twins, Captain Haddock, and Calculus) accompany him. This in a way sets the scene for the later books, indicating the characters that will end up playing major roles in the stories. In a way it can be suggested that Red Rackham's Treasure marks the completion of the Tintin world, and now we move on to the other adventures. However, I feel that by this time many of the truly classic adventures lay behind us. However, I am making my way through my collection and will hopefully have a complete set shortly.",
+    "created_at": "2021-12-02T16:35:18.322Z",
+    "rating": 4,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 11,
+  "fields": {
+    "book": 29,
+    "review": "this story always cheers me up to go to the big sea and start digging in the bay of the oceans , seas , rivers to find all kind of treasures and always aroused my spirit to find a great treasure someday !!",
+    "created_at": "2021-12-02T16:35:59.057Z",
+    "rating": 5,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 12,
+  "fields": {
+    "book": 31,
+    "review": "I love how Captain Haddock is trying to be a gentleman in this book with his monocle.",
+    "created_at": "2021-12-02T16:36:47.197Z",
+    "rating": 4,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 13,
+  "fields": {
+    "book": 31,
+    "review": "The Tintin stories for anyone who has read them and understands their history can't be viewed as anything other than groundbreaking. The beginnings of these stories have been around as long as the Lord of the Rings, the illustration and environments in the Tintin books are accurate and extremely detailed. Anyone who has spent even a little time exploring Herge (Georges Remi) can see the painstaking research and adversity he worked through to compose the world around Tintin. His ideas were ahead of his time (Exploring the moon, Industrialization, South American political conflict, modern slave trade, extraterrestrial life) and he made certain every detail for every object would be realistic (after the third book at least). Herge's work can certainly be cited as an influence for any modern day graphic novel or comic book.",
+    "created_at": "2021-12-02T16:37:03.697Z",
+    "rating": 5,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 14,
+  "fields": {
+    "book": 31,
+    "review": "Herge's clear, crisp style looks nice, but that's about all the good I can say about Tintin. I've read several of these now and they're all pretty generic mystery stories. There's nothing memorable. Don't get the appeal of this character at all.",
+    "created_at": "2021-12-02T16:37:39.208Z",
+    "rating": 2,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 15,
+  "fields": {
+    "book": 31,
+    "review": "When it comes to multi-volumed Tintin stories, this is one of his best adventure. Though half the story in this book is unnecessary, it still is a good read. When I read it for the first time, I was quite fascinated with this ancient civilization and had dived into research mode. I primarily enjoyed Tintin for the setting it offered.",
+    "created_at": "2021-12-02T16:37:52.233Z",
+    "rating": 3,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 16,
+  "fields": {
+    "book": 14,
+    "review": "It pains me to write this because I am, at heart, a print person. My paycheck depends on people wanting and buying printed materials. But this is one instance where the movie far outshines the book and I'm glad there was a screenwriter with a vision to see beyond this dismal book.\r\n\r\nI had just read Three Musketeers by Dumas when I read this book. Perhaps it was the pleasure I took in this early book that spoiled Man in the Iron Mask.\r\n\r\nMan in the Iron Mask starts out well. There is all the chivalry and twice the intrigue of Dumas' earlier works. The dialog is fantastic with politics twisting every meaning and clearly communicating the rancor of the time. There is a fantastic scene with Porthos, Aramis and the tailor that made me laugh aloud. I truly like Dartangan, for he displays chivalry and honor even when ordered to do things against his honor.\r\n\r\nThen the book starts to go downhill. Characters that one would think were essential to the book disappear midway through and are never heard from again. Aramis becomes less and less sympathetic until we finally view him as merely a court toady who cared little for the sacrifice of his friends.\r\n\r\nThere are moments in this book; moments of passion, of grief, of love. But they are merely moments. Eventually the book becomes so ponderous, one must force oneself to continue. There are few characters to like in this book. They get themselves into situations for stupid reasons and are too self-centered to get out of them. Sacrifices are made for foolish reasons.",
+    "created_at": "2021-12-02T16:38:58.050Z",
+    "rating": 1,
+    "owner": 4
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 18,
+  "fields": {
+    "book": 13,
+    "review": "I am a drama addict. I admit it. I don’t generally go for comedy. I will pick a movie that makes me cry over one that makes me laugh every time, and it is pretty much the same with my books. But when I do read something humorous, I love satire, wit, subtle humor. Mark Twain, Oscar Wilde or Will Rogers are my style. Imagine my surprise that Alexander Dumas has made me laugh aloud in The Three Musketeers. They are so over-the-top, while written as if he is endeavoring to take them seriously. I have long adored The Count of Monte Cristo, and so I have never thought of Monsieur Dumas as a humorist, but I have been sadly mistaken.\r\n\r\nEvery time you think D’Artagnan and company have landed themselves in an impossible situation, they miraculously find their way out. It is Don Quixote without any of the moral overtones. These men are heroic figures only in a comedic manner. Taken literally they would be abject cads. They are self-absorbed, misogynistic, and amoral, but it little matters since the world they inhabit is villainous and petty and corrupt. The King who is the head of the state is a buffoon, the Queen a philanderer, and the Cardinal, leader of the church, a man without ethics or morals. Any wonder that their men are less than stellar examples of knighthood?\r\n\r\nSo, without any reason to admire anyone in this fictional world, we are able to enjoy the escapades of these men and even cheer them on toward their conquests of women, rivals, and the world of French politics. In fact, they are more often fighting other Frenchmen than the English, whom they profess to hate but for whom they seem to have great respect and admiration.\r\n\r\nI can imagine reading this in serialized form and waiting impatiently to find out what happens to Milady and the Musketeers. There are cliffhangers at almost every chapter ending and the pace is fast and furious. I felt somewhat like a kid again while reading this. I remember that joy in reading just for the thrill of the story...a sensation I don’t always get with my reading these days.",
+    "created_at": "2021-12-02T16:39:54.587Z",
+    "rating": 4,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 19,
+  "fields": {
+    "book": 8,
+    "review": "Someone I know claimed this no longer has value, that she would never recommend it because it's saccharine, has a religious agenda, and sends a bad message to girls that they should all be little domestic homebodies. I say she's wrong on all counts. This is high on my reread list along with Pride and Prejudice, Jane Eyre, and a Tree Grows in Brooklyn--you could say that I'm pretty familiar with it.\r\n\r\nLet's see--there's a heroine who not only writes, but is proud of the fact and makes a profit from it in a time that this was somewhat out-of-the-ordinary. Reading this, and especially knowing later that the main character is (for all practical purposes) Alcott herself, inspired me to write myself, and I haven't forgotten the writing lessons even today: don't let money cloud your vision, write for yourself first, take criticism, write what you know. Still wise even today. Also in this book, we see the perspective of a family coping with the financial and emotional strain of having a loved one away at war, something that is unfortunately all too relatable today. There's also (extraordinary in those times, common in ours)a platonic, though not uncomplicated, friendship between a man and a woman that is sort of a different kind of love story in a way and a powerful one at that. We see people getting married, but marriage is never portrayed as The Answer to Everything--many of the matches involve sacrifice and struggling. The girls, though good at heart, aren't a picture-perfect family of saints. They're flawed and human. The paragon Beth would seem the exception, but the message with her is more about how even the quietest among us can make an impact on the world--not parading her isolated life as an example, only her kindness.\r\n\r\nI won't lie. Someone dies, there's a war and a father's away--so yes, God is mentioned: I think there's a few Pilgrim's Progress references in passing and there's some talk of faith at moments when the characters most need it. To contemporary readers, this may seem like a lot, but heavy-handed it is not. It was probably somewhat unusual for its time. The thought that everyone's relationship and perception of God could greatly vary, and that to be true to your religion was entirely non judgmental and meant being kind to other people and trying to make yourself better, not other people? The thought that each person must be allowed to deal with these feelings in their own time in their own way? Wacky stuff.\r\n\r\nI admit it seems like a tough sell to today's kids, packaged in somewhat formal sounding-language, and bearing every indication of being literary broccoli, but this book is a classic for a reason. It might be a tough sell, but I don't think we should give up on trying to think of ways to do it anyway. What's inside still counts. Don't write it off.",
+    "created_at": "2021-12-02T16:41:08.860Z",
+    "rating": 5,
+    "owner": 3
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 20,
+  "fields": {
+    "book": 12,
+    "review": "Great book, read it!",
+    "created_at": "2021-12-07T12:33:46.529Z",
+    "rating": 4,
+    "owner": 4
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 21,
+  "fields": {
+    "book": 12,
+    "review": "great one!",
+    "created_at": "2021-12-07T12:35:05.642Z",
+    "rating": 5,
+    "owner": 4
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 22,
+  "fields": {
+    "book": 12,
+    "review": "not the best",
+    "created_at": "2021-12-07T12:39:42.793Z",
+    "rating": 2,
+    "owner": 4
+  }
+}
+]

@@ -5,6 +5,7 @@ import Book from './components/Book'
 import Browse from './components/Browse'
 import BrowseByGenre from './components/BrowseByGenre'
 import Collection from './components/Collection'
+import Footer from './components/Footer'
 import Home from './components/Home'
 import MyNavbar from './components/MyNavbar'
 import Register from './components/Register'
@@ -27,6 +28,7 @@ function App() {
         <Route exact path='/books/:id' component={Book}/>
         <Route exact path='/author/:id' component={AuthorPage}/>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   )
 }

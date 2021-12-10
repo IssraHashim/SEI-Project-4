@@ -1,0 +1,178 @@
+[
+{
+  "model": "authors.author",
+  "pk": 1,
+  "fields": {
+    "name": "test Author 1",
+    "image": "author.jpg",
+    "biography": "this is a biography for author 1",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 2,
+  "fields": {
+    "name": "author 2",
+    "image": "this.jpg",
+    "biography": "author 2 biography",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 4,
+  "fields": {
+    "name": "Louisa May Alcott",
+    "image": "https://static01.nyt.com/images/2020/06/25/multimedia/25xp-alcott/25xp-alcott-superJumbo.jpg?quality=75&auto=webp",
+    "biography": "Her childhood, growing up as the second of four sisters at the lyrically named Orchard House, would later form the basis of her most famous novel, Little Women. Although Alcott had written stories, poems and plays from childhood and published work from her early twenties – including powerful accounts of her time as a Civil War nurse - it was Little Women that made her name. Written after her publisher requested a ‘girl’s story’, Little Women tells the story of the four March sisters: Meg, Jo, Beth and Amy. Like her self-modelled heroine Jo, Alcott was headstrong, determined and an inveterate t",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 5,
+  "fields": {
+    "name": "Oscar Wilde",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Oscar_Wilde_3g07095u-adjust.jpg/800px-Oscar_Wilde_3g07095u-adjust.jpg",
+    "biography": "Oscar Wilde was an Irish author and the most popular playwright in 1890s London. He studied the Classics at Dublin and Oxford before moving to London. He wrote his only novel, The Picture of Dorian Gray, in 1890 but his reputation arose from the success of his plays.\r\n\r\nIn 1895 Wilde brought a case of libel against the Marquess of Queensberry after the latter called him a sodomite. During the trial, evidence appeared which led to Wilde's eventual arrest for 'gross indecency with other men.' He was imprisoned to two years hard labour and left for France upon his release. He died in Paris at the age of 46.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 6,
+  "fields": {
+    "name": "Charles Dickens",
+    "image": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTY2NTQ1NTM2OTM2MDYwMTQ2/charles-dickens.jpg",
+    "biography": "Dickens was born in Portsmouth in 1812, the second of eight children, but the family moved to London two years later. When Charles was twelve his father was imprisoned in the Marshalsea debtor’s prison, a momentous event in the young Dickens’ life which forced him out of school and into a ‘blacking’ factory to help support his impecunious family. Although this state-of-affairs lasted only a few months, the first-hand experience of poverty shaped much of Dickens’ literary output and contributed to him becoming one of the fiercest critics of social deprivation of the Victorian age. Upon leaving school at fifteen, Dickens found work as a court reporter and began to contribute short stories and essays to periodicals. Assuming the pseudonym of Boz, he published his first collection, Sketches by Boz, in 1836. The following year saw the appearance of The Posthumous Papers of the Pickwick Club in monthly instalments.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 7,
+  "fields": {
+    "name": "Alexandre Dumas",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg",
+    "biography": "Alexandre Dumas was one of the most popular French authors of the 19th century. He is best known for writing historical novels such as The Count of Monte Cristo and The Three Musketeers. He was one of the earliest authors to fully use the possibilities provided by the serial novel that kept readers gripped as the story unfolded.\r\n\r\nHe was hugely successful in his lifetime but rarely held on to his money as he spent it on his expensive lifestyle and women. One recent historian suspects Dumas of having up to forty mistresses. He created over 250 books with the help of an army of assistants, most noticeably the historian Auguste Maquet who would compose the plots and Dumas would elaborate, writing the details, dialogue and final chapters.\r\n\r\nDumas died of a stroke on 5th December 1870 at Puys, near Dieppe leaving behind at least four children from his numerous liaisons.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 8,
+  "fields": {
+    "name": "J. R. R. Tolkien",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/J._R._R._Tolkien%2C_1940s.jpg/800px-J._R._R._Tolkien%2C_1940s.jpg",
+    "biography": "J.R.R. Tolkien was an English fantasy author and academic. Tolkien settled in England as a child, going on to study at Exeter College. While teaching at Oxford University, he published the popular fantasy novels The Hobbit and The Lord of the Rings trilogy. The works have had a devoted international fan base and been adapted into award-winning blockbuster films.",
+    "owner": 3,
+    "followers": [
+      4
+    ]
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 9,
+  "fields": {
+    "name": "Margaret Atwood",
+    "image": "https://cdn.britannica.com/88/207888-050-9B3C1774/Margaret-Atwood-2018.jpg",
+    "biography": "Variously covering the themes and genres of feminist ideology, haunting dystopia, mythical re-working, speculative science fiction and witty, contemporary drama, Margaret Atwood’s work is diverse and startlingly original.\r\n\r\nHer first publications were poetry - a form to which she has returned throughout her career – but it was with the publication of her novel The Edible Woman that she first found literary recognition. Published in 1969 the novel, and Atwood herself, were quickly adopted as icons of the feminist movement but Atwood has always denied such over labelling of her work, saying, \"novels are something else. They aren't just political messages… it's not a matter of men against women.\"",
+    "owner": 3,
+    "followers": [
+      4
+    ]
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 10,
+  "fields": {
+    "name": "George R. R. Martin",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg",
+    "biography": "Born in Bayonne, New Jersey, legendary fantasy fiction author George R.R. Martin (GRRM) began writing early, selling monster stories to his school friends for pocket money as a child. He wrote part-time for fantasy journals throughout the 1970’s, whilst working as a teacher before becoming a full-time writer in 1979, penning novels including the vampiric historical horror novel Fevre Dream, a host of award-winning short fiction and writing for television. In 1991 he began working on the fantasy epic series - inspired by Tolkien’s Lord of the Rings – which would become A Song of Ice and Fire. The first novel, A Game of Thrones, was published in 1996 and by the time of the fourth novel’s publication in 2005, the series had become New York Times bestsellers. The series was adapted into a major television series by HBO, making A Game of Thrones a household name. To date the series encompasses five novels as well as associated short fiction and accompanying volumes.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 12,
+  "fields": {
+    "name": "Nelson Mandela",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Nelson_Mandela_1994.jpg",
+    "biography": "Nelson Rolihlahla Mandela was a South African anti-apartheid revolutionary, political leader and philanthropist who served as the first president of South Africa from 1994 to 1999. He was the country's first black head of state and the first elected in a fully representative democratic election. His government focused on dismantling the legacy of apartheid by tackling institutionalised racism and fostering racial reconciliation. Ideologically an African nationalist and socialist, he served as the president of the African National Congress party from 1991 to 1997.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 13,
+  "fields": {
+    "name": "Bill Gates",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Bill_Gates_2017_%28cropped%29.jpg",
+    "biography": "William Henry Gates III  is an American business magnate, software developer, investor, author, and philanthropist. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen.During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president and chief software architect, while also being the largest individual shareholder until May 2014. He is considered one of the best known entrepreneurs of the microcomputer revolution of the 1970s and 1980s.",
+    "owner": 3,
+    "followers": [
+      4
+    ]
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 14,
+  "fields": {
+    "name": "Thomas Piketty",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Thomas_Piketty%2C_2015_%28cropped%29.jpg",
+    "biography": "Thomas Piketty is a French economist who is Professor of Economics at the School for Advanced Studies in the Social Sciences, Associate Chair at the Paris School of Economics and Centennial Professor of Economics in the International Inequalities Institute at the London School of Economics.\r\n\r\nPiketty's work focuses on public economics, in particular income and wealth inequality. He is the author of the best-selling book Capital in the Twenty-First Century (2013), which emphasises the themes of his work on wealth concentrations and distribution over the past 250 years. The book argues that the rate of capital return in developed countries is persistently greater than the rate of economic growth, and that this will cause wealth inequality to increase in the future.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 15,
+  "fields": {
+    "name": "Herge",
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/dc/Herge_with_bust_of_Tintin.png",
+    "biography": "Georges Prosper Remi, known by the pen name Hergé, from the French pronunciation of his initials, was a Belgian cartoonist. He is best known for creating The Adventures of Tintin, the series of comic albums which are considered one of the most popular European comics of the 20th century. He was also responsible for two other well-known series, Quick & Flupke  and The Adventures of Jo, Zette and Jocko. His works were executed in his distinct ligne claire drawing style.",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 16,
+  "fields": {
+    "name": "new author",
+    "image": "author.jpg",
+    "biography": "this is a new biography",
+    "owner": 4,
+    "followers": [
+      3
+    ]
+  }
+},
+{
+  "model": "authors.author",
+  "pk": 20,
+  "fields": {
+    "name": "Maya Angelou",
+    "image": "https://www.gannett-cdn.com/-mm-/715ca9c0e763b8130298f4265b5bcaf4898a79e5/c=0-146-1370-1177/local/-/media/USATODAY/GenericImages/2014/05/28//1401284180000-XXX-ANGELOU-MOM-BOOKS-2370.jpg?width=2560",
+    "biography": "A global icon, acclaimed American poet, activist, and autobiographer Maya Angelou is widely regarded as one of the most important writers of the twentieth-century. Born Marguerite Annie Johnson in St. Louis Missouri in 1928, she had an extraordinary and varied career (TIME Magazine gave a precis of just some of her more unusual work as including the roles of: ‘cook, waitress, sex-worker, dancer, actor, playwright, editor at an English-language newspaper in Egypt, Calypso singer, and cast member of the opera Porgy and Bess’. In her lifetime she published more than 30 books, became Hollywood’s first female black director and was widely acclaimed for her work as a civil rights activist with Dr. Martin Luther King Jr. and Malcolm X. She was awarded the National Medal of Arts by President Bill Clinton and the Presidential Medal of Freedom, the highest civilian honour in the United States, by President Barack Obama.",
+    "owner": 3,
+    "followers": [
+      3,
+      4
+    ]
+  }
+}
+]

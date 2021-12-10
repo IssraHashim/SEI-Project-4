@@ -1,0 +1,358 @@
+[
+{
+  "model": "books.book",
+  "pk": 8,
+  "fields": {
+    "title": "Little Women",
+    "author": 4,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141192413.jpg",
+    "publication_year": 1868,
+    "description": "Meg, Jo, Amy and Beth - four 'little women' enduring hardships and enjoying adventures in Civil War New England.\r\n\r\nThe charming story of the March sisters, Little Women has been adored by generations. Readers have rooted for Laurie in his pursuit of Jo's hand, cried over little Beth's death, and dreamed of traveling through Europe with old Aunt March and Amy.\r\n\r\nFuture writers have found inspiration in Jo's devotion to her writing. In this simple, enthralling tale, both parts of which are included here, Louisa May Alcott has created four of American literature's most beloved women.",
+    "genre": "Classics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 9,
+  "fields": {
+    "title": "The Picture of Dorian Gray",
+    "author": 5,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/1414/9780141442464.jpg",
+    "publication_year": 1890,
+    "description": "Enthralled by his own exquisite portrait, Dorian Gray exchanges his soul for eternal youth and beauty.\r\n\r\nInfluenced by his friend Lord Henry Wotton, he is drawn into a corrupt double life; indulging his desires in secret while remaining a gentleman in the eyes of polite society. Only his portrait bears the traces of his decadence.\r\n\r\nThe novel was a succes de scandale and the book was later used as evidence against Wilde at the Old Bailey in 1895. It has lost none of its power to fascinate and disturb.Part of Penguin's beautiful hardback Clothbound Classics series, designed by the award-winning Coralie Bickford-Smith, these delectable and collectible editions are bound in high-quality colourful, tactile cloth with foil stamped into the design.",
+    "genre": "Classics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 10,
+  "fields": {
+    "title": "A Christmas Carol",
+    "author": 6,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/1413/9780141389479.jpg",
+    "publication_year": 1843,
+    "description": "Charles Dickens's tale of Ebenezer Scrooge, who is haunted by three spirits and learns the true meaning of Christmas has had, along with Dickens's other Christmas writings, a lasting and significant influence upon our ideas about the season as a time for celebration, charity and memory.",
+    "genre": "Classics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 11,
+  "fields": {
+    "title": "Oliver Twist",
+    "author": 6,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9781/7848/9781784873417.jpg",
+    "publication_year": 1838,
+    "description": "Oliver is an orphan living on the dangerous London streets with no one but himself to rely on. Fleeing from poverty and hardship, he falls in with a criminal street gang who will not let him go, however hard he tries to escape. In Oliver Twist, Dickens graphically conjures up the capital's underworld, full of prostitutes, thieves and lost and homeless children, and gives a voice to the disadvantaged and abused.",
+    "genre": "Classics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 12,
+  "fields": {
+    "title": "The Count of Monte Cristo",
+    "author": 7,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/1413/9780141392462.jpg",
+    "publication_year": 1844,
+    "description": "A beautiful new clothbound edition of Alexandre Dumas' classic novel of wrongful imprisonment, adventure and revenge.\r\n\r\nThrown in prison for a crime he has not committed, Edmond Dantes is confined to the grim fortress of the Chateau d'If. There he learns of a great hoard of treasure hidden on the Isle of Monte Cristo and becomes determined not only to escape but to unearth the treasure and use it to plot the destruction of the three men responsible for his incarceration.\r\n\r\nA hugely popular success when it was first serialized in the 1840s, Dumas was inspired by a real-life case of wrongful imprisonment when writing his epic tale of suffering and retribution.",
+    "genre": "Classics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 13,
+  "fields": {
+    "title": "The Three Musketeers",
+    "author": 7,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/1414/9780141442341.jpg",
+    "publication_year": 1844,
+    "description": "Young D'Artagnan arrives in Paris to join the King's elite guards, but almost immediately finds he is duelling with some of the very men he has come to swear allegiance to - Porthos, Athos and Aramis, inseparable friends: the Three Musketeers. Soon part of their close band, D'Artagnan's loyalty to his new allies puts him in the deadly path of Cardinal Richlieu's machinations. And when the young hero falls in love with the beautiful but inaccessible Constance, he finds himself in a world of murder, conspiracy and lies, with only the Musketeers to depend on. A stirring nineteenth-century tale of friendship and adventure, The Three Musketeers continues to be one of the most influential and popular pieces of French literature.",
+    "genre": "Classics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 14,
+  "fields": {
+    "title": "The Man in the Iron Mask",
+    "author": 7,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/1995/9780199537259.jpg",
+    "publication_year": 1847,
+    "description": "One of France's best-selling writers at the time of the novel's composition, Dumas here combines what he considered to be life's essentials - `l'action et l'amour'. This historical romance is the climax of his epic of chivalry and valour that began with The Three Musketeers, and it is here that Athos, Porthos, Aramis, and their friend d'Artagnan, once invincible, meet their destinies. This edition provides background information and notes crucial to an understanding of the legend and the novel's setting. ABOUT THE SERIES: For over 100 years Oxford World's Classics has made available the widest range of literature from around the globe. Each affordable volume reflects Oxford's commitment to scholarship, providing the most accurate text plus a wealth of other valuable features, including expert introductions by leading authorities, helpful notes to clarify the text, up-to-date bibliographies for further study, and much more.",
+    "genre": "Biography",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 15,
+  "fields": {
+    "title": "The Fellowship of the Ring",
+    "author": 8,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/2611/9780261103573.jpg",
+    "publication_year": 1954,
+    "description": "Continuing the story begun in The Hobbit, this is the first part of Tolkien's epic masterpiece, The Lord of the Rings, featuring a striking black cover based on Tolkien's own design, the definitive text, and a detailed map of Middle-earth.\r\n\r\nSauron, the Dark Lord, has gathered to him all the Rings of Power - the means by which he intends to rule Middle-earth. All he lacks in his plans for dominion is the One Ring - the ring that rules them all - which has fallen into the hands of the hobbit, Bilbo Baggins.\r\n\r\nIn a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 16,
+  "fields": {
+    "title": "The Two Towers",
+    "author": 8,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/2611/9780261103580.jpg",
+    "publication_year": 1954,
+    "description": "Building on the story begun in The Hobbit, this is the second part of Tolkien's epic masterpiece, The Lord of the Rings, featuring a striking black cover based on Tolkien's own design, the definitive text, and a detailed map of Middle-earth.\r\n\r\nFrodo and the Companions of the Ring have been beset by danger during their quest to prevent the Ruling Ring from falling into the hands of the Dark Lord by destroying it in the Cracks of Doom. They have lost the wizard, Gandalf, in the battle with an evil spirit in the Mines of Moria; and at the Falls of Rauros, Boromir, seduced by the power of the Ring, tried to seize it by force. While Frodo and Sam made their escape the rest of the company were attacked by Orcs.\r\n\r\nNow they continue their journey alone down the great River Anduin - alone, that is, save for the mysterious creeping figure that follows wherever they go.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 17,
+  "fields": {
+    "title": "The Return of the King",
+    "author": 8,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/2611/9780261103597.jpg",
+    "publication_year": 1955,
+    "description": "Concluding the story begun in The Hobbit, this is the final part of Tolkien's epic masterpiece, The Lord of the Rings. Featuring a striking black cover based on Tolkien's own design, the definitive text, and a detailed map of Middle-earth.\r\n\r\nThe armies of the Dark Lord are massing as his evil shadow spreads ever wider. Men, Dwarves, Elves and Ents unite forces to do battle agains the Dark. Meanwhile, Frodo and Sam struggle further into Mordor in their heroic quest to destroy the One Ring.\r\n\r\nImpossible to describe in a few words, JRR Tolkien's great work of imaginative fiction has been labelled both a heroic romance and a classic fantasy fiction. By turns comic and homely, epic and diabolic, the narrative moves through countless changes of scene and character in an imaginary world which is totally convincing in its detail. Tolkien created a vast new mythology in an invented world which has proved timeless in its appeal.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 18,
+  "fields": {
+    "title": "The Handmaid's Tale",
+    "author": 9,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/0995/9780099511663.jpg",
+    "publication_year": 1985,
+    "description": "Offred lives in The Republic of Gilead. To some, it is a utopian vision of the future, a place of safety, a place where everyone has a purpose, a function. But The Republic of Gilead offers Offred only one function: to breed.\r\n\r\nIf she deviates, she will, like dissenters, be hanged at the wall or sent out to die slowly of radiation sickness. But even a repressive state cannot obliterate desire - neither Offred's nor that of the two men on which her future hangs.",
+    "genre": "Fiction",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 19,
+  "fields": {
+    "title": "The Testaments",
+    "author": 9,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9781/7847/9781784742324.jpg",
+    "publication_year": 2019,
+    "description": "Launched to widespread acclaim at our flagship Piccadilly shop, Margaret Atwood's Booker-winning sequel to The Handmaid's Tale is undoubtedly the story for our times.\r\n\r\nPicking up ten years after its predecessor’s tantalisingly open-ended conclusion, The Testaments provides a new window into Atwood’s dystopian world, as seen through the eyes of three women of Gilead: a girl brought up within its confines, another on the run beyond its walls, and a woman at the very heart of the regime’s dark designs with secrets of her own. Each has a unique perspective on the world of Gilead and each will be crucial in deciding its fate.",
+    "genre": "Fiction",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 20,
+  "fields": {
+    "title": "A Game of Thrones",
+    "author": 10,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007448036.jpg",
+    "publication_year": 1996,
+    "description": "The first volume in the A Song of Ice and Fire series – unquestionably one of the greatest fantasy epics of all time. Here, we are introduced to the Seven Kingdoms of Westeros, and the major players with eyes on its Iron Throne. As noble families battle for power, greater threats face them all: for winter is coming to Westeros, and here, winter can last a lifetime.\r\nSummers span decades. Winter can last a lifetime. And the struggle for the Iron Throne has begun.\r\nAs Warden of the north, Lord Eddard Stark counts it a curse when King Robert bestows on him the office of the Hand. His honour weighs him down at court where a true man does what he will, not what he must ... and a dead enemy is a thing of beauty.\r\nThe old gods have no power in the south, Stark's family is split and there is treachery at court. Worse, the vengeance-mad heir of the deposed Dragon King has grown to maturity in exile in the Free Cities. He claims the Iron Throne.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 21,
+  "fields": {
+    "title": "A Clash of Kings",
+    "author": 10,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007447831.jpg",
+    "publication_year": 1998,
+    "description": "Throughout Westeros, the cold winds are rising.\r\n\r\nFrom the ancient citadel of Dragonstone to the forbidding lands of Winterfell, chaos reigns as pretenders to the Iron Throne of the Seven Kingdoms stake their claims through tempest, turmoil and war.\r\n\r\nAs a prophecy of doom cuts across the sky - a comet the colour of blood and flame - five factions struggle for control of a divided land. Brother plots against brother and the dead rise to walk in the night.\r\n\r\nAgainst a backdrop of incest, fratricide, alchemy and murder, the price of glory is measured in blood.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 22,
+  "fields": {
+    "title": "A Storm of Swords",
+    "author": 10,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007447848.jpg",
+    "publication_year": 2000,
+    "description": "The Seven Kingdoms are divided by revolt and blood feud, and winter approaches like an angry beast.\r\nThe men of the Night's Watch are ready for the coming of a great cold and the walking corpses that travel with it. But now they face a horde of wildlings twenty-thousand strong poised to invade the Kingdom of the North where Robb Stark wears his new-forged crown.\r\nBut Robb's defences are ranged against attack from the South. His sisters are trapped there, dead or likely yet to die, at the whim of the Lannister boy-king Joffrey or his depraved mother Cersei, regent of the Iron Throne. Cersei's ambition is unfettered while the dwarf Tyrion Lannister fights for his life, a victim of treachery.\r\nAnd on the other side of the ocean, the last of the Targaryens rears the dragons she hatched from her husband's funeral pyre. Daenerys will return to the land of her birth to avenge the murder of her father, the last Dragon King on the Iron Throne.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 23,
+  "fields": {
+    "title": "A Feast for Crows",
+    "author": 10,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007447862.jpg",
+    "publication_year": 2005,
+    "description": "The Lannisters are in power on the Iron Throne.\r\n\r\nThe war in the Seven Kingdoms has burned itself out, but in its bitter aftermath new conflicts spark to life. The Martells of Dorne and the Starks of Winterfell seek vengeance for their dead. Euron Crow's Eye, as black a pirate as ever raised a sail, returns from the smoking ruins of Valyria to claim the Iron Isles.\r\n\r\nFrom the icy north, where Others threaten the Wall, apprentice Maester Samwell Tarly brings a mysterious babe in arms to the Citadel. As plots, intrigue and battle threaten to engulf Westeros, victory will go to the men and women possessed of the coldest steel and the coldest hearts.",
+    "genre": "Fantasy",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 24,
+  "fields": {
+    "title": "A Dance With Dragons",
+    "author": 10,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007466061.jpg",
+    "publication_year": 2016,
+    "description": "The future of the Seven Kingdoms hangs in the balance.\r\n\r\nDaenerys rules as queen of a city built on dust and death, beset by enemies. Now that her whereabouts are known many are seeking Daenerys and her dragons. Among them the dwarf, Tyrion Lannister, who has escaped King's Landing with a price on his head, wrongfully condemned to death for the murder of his nephew, King Joffrey. \r\nTo the north lies the great Wall of ice and stone - a structure only as strong as those guarding it. Eddard Stark's bastard son Jon Snow has been elected the 998th Lord Commander of the Night's Watch, but he has enemies both in the Watch and beyond the Wall. On all sides bitter conflicts are reigniting, played out by a grand cast of outlaws and priests, soldiers and skinchangers, nobles and slaves. The tides of destiny will inevitably lead to the greatest dance of all...",
+    "genre": "Fantasy",
+    "owner": 4,
+    "followers": [
+      3
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 26,
+  "fields": {
+    "title": "Long Walk to Freedom",
+    "author": 12,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/3491/9780349106533.jpg",
+    "publication_year": 1994,
+    "description": "The riveting memoirs of the outstanding moral and political leader of our time, Long Walk to Freedom brilliantly re-creates the drama of the experiences that helped shape Nelson Mandela's destiny. Emotive, compelling and uplifting, Long Walk to Freedom is the exhilarating story of an epic life; a story of hardship, resilience and ultimate triumph told with the clarity and eloquence of a born leader.",
+    "genre": "Biography",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 27,
+  "fields": {
+    "title": "How to Avoid a Climate Disaster: The Solutions We Have and the Breakthroughs We Need",
+    "author": 13,
+    "image": "https://cdn.waterstones.com/override/v3/large/9780/2414/9780241448304.jpg",
+    "publication_year": 2021,
+    "description": "Bill Gates has spent a decade investigating the causes and effects of climate change. In this book, he not only explains why we need to work toward net-zero emissions of greenhouse gases, but also details what we need to do to achieve this profoundly important goal.\r\n\r\nHe gives us a clear-eyed description of the challenges we face. He describes the areas in which technology is already helping to reduce emissions, where and how the current technology can be made to function more effectively, where breakthrough technologies are needed, and who is working on these essential innovations. Finally, he lays out a concrete, practical plan for achieving the goal of zero emissions-suggesting not only policies that governments should adopt, but what we as individuals can do to keep our government, our employers, and ourselves accountable in this crucial enterprise.",
+    "genre": "Business",
+    "owner": 3,
+    "followers": [
+      4
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 28,
+  "fields": {
+    "title": "Capital in the Twenty-First Century",
+    "author": 14,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/6749/9780674979857.jpg",
+    "publication_year": 2013,
+    "description": "Piketty shows that modern economic growth and the diffusion of knowledge have allowed us to avoid inequalities on the apocalyptic scale predicted by Karl Marx. But we have not modified the deep structures of capital and inequality as much as we thought in the optimistic decades following World War II. The main driver of inequality-the tendency of returns on capital to exceed the rate of economic growth-today threatens to generate extreme inequalities that stir discontent and undermine democratic values. But economic trends are not acts of God. Political action has curbed dangerous inequalities in the past, Piketty says, and may do so again.",
+    "genre": "Business",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 29,
+  "fields": {
+    "title": "Red Rackham's Treasure",
+    "author": 15,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9781/4052/9781405206235.jpg",
+    "publication_year": 1944,
+    "description": "The world's most famous travelling reporter sets out in search of Red Rackham's treasure.\r\n\r\nDetermined to find the treasure of the notorious pirate Red Rackham, Tintin and Captain Haddock set sail aboard the Sirius to find the shipwreck of the Unicorn. With the help of an ingenious shark-shaped submarine, Tintin follows the clues deep down on this ocean adventure.",
+    "genre": "Comics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 30,
+  "fields": {
+    "title": "Explorers on the Moon",
+    "author": 15,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9781/4052/9781405206280.jpg",
+    "publication_year": 1953,
+    "description": "The world's most famous travelling reporter struggles to keep his feet on the ground as his adventures take him to the moon!\r\n\r\nFollowing on from the events of Destination Moon, Tintin finds himself in a rocket on a collision course with the moon. And with Snowy the dog, Captain Haddock, Professor Calculus and the Thompson twins aboard, things quickly spiral further and further out of control.",
+    "genre": "Comics",
+    "owner": 3,
+    "followers": [
+      3
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 31,
+  "fields": {
+    "title": "The Seven Crystal Balls",
+    "author": 15,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9781/4052/9781405206242.jpg",
+    "publication_year": 1948,
+    "description": "The world's most famous travelling reporter is faced with an ancient Inca curse, which is causing its victims to fall into a life-threatening coma. The tomb of Rascar Capac has been unearthed!\r\n\r\nBut one by one, the finders fall into a terrifying coma. Can this be the curse of the Inca gods? Tintin must somehow fathom out the meaning behind his only clue: the shattered crystal ball lying beside each of the victims ...",
+    "genre": "Comics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 32,
+  "fields": {
+    "title": "Land of Black Gold",
+    "author": 15,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9781/4052/9781405206266.jpg",
+    "publication_year": 1950,
+    "description": "The world's most famous travelling reporter sets out for the Middle East in his latest adventure.\r\n\r\nBoom! Doctored petrol is blowing up vehicles all around the country. Determined to find the culprits, Tintin heads for the Middle East, but he is in for a nasty shock when he encounters a familiar face in the desert.",
+    "genre": "Comics",
+    "owner": 3,
+    "followers": []
+  }
+},
+{
+  "model": "books.book",
+  "pk": 39,
+  "fields": {
+    "title": "I Know Why The Caged Bird Sings",
+    "author": 20,
+    "image": "https://cdn.waterstones.com/bookjackets/large/9780/8606/9780860685111.jpg",
+    "publication_year": 1969,
+    "description": "he first and best-known of Maya Angelou's extraordinary seven volumes of autobiography is a testament to the talents and resilience of this extraordinary writer.\r\n\r\nLoving the world, she also knows its cruelty. As a Black woman she has known discrimination and extreme poverty, but also hope, joy, achievement and celebration.\r\n\r\nIn I Know Why the Caged Bird Sings, Maya Angelou beautifully evokes her childhood with her grandmother in the American south of the 1930s. She learns the power of the white folks at the other end of town and suffers the terrible trauma of rape by her mother's lover.",
+    "genre": "Biography",
+    "owner": 4,
+    "followers": []
+  }
+}
+]
