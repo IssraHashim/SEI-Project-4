@@ -108,6 +108,13 @@
   width: 170px;
   border-radius: 50%;
 }
+
+#profile_image2 {
+  width: 200px;
+  border-radius: 50%;
+}
+
+
 .liked.btn.btn-outline-light {
   background-color: rgba(230, 230, 210, 0.603);
 }
@@ -216,7 +223,7 @@ a {
   color: #8E8D8A !important;
 }
 
-#book_delete_button, #settings_delete_button {
+#book_delete_button, #settings_delete_button  {
   border-radius: 25px;
   padding: 10px 100px;
   margin: 20px;
@@ -224,6 +231,7 @@ a {
   color: #EAE7DC;
   border-width: 0;
 }
+
 
 #add_review_form {
   padding: 30px;

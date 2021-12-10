@@ -114,11 +114,11 @@ const AuthorPage = () => {
             <div className="container" id='book_container'>
               <div className="row row align-items-center">
                 <div className="col" id='book_image_column'>
-                  <div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <img src={author.image} alt={author.image} id='author_image'/>
                   </div>
                   {userIsAuthenticated() && 
-                  <div className='my-5'>
+                  <div className='my-5' style={{ margin: '25px', display: 'flex', flexDirection: 'column' }}>
                     <a href="#" onClick={(event) => followAuthor(event)} className = {`${liked ? 'liked' : ''} btn btn-outline-light border` }><i className="fas fa-feather-alt"></i> {liked ? ' Following' : ' Follow '} </a>
                   </div>
                   }
