@@ -8,6 +8,7 @@ import Spinner from 'react-bootstrap/esm/Spinner'
 import { userIsAuthenticated, getPayload, getTokenFromLocalStorage } from '../helpers/auth'
 import Cookies from 'js-cookie'
 import AddReview from './AddReview'
+import UpdateABook from './UpdateABook'
 
 const Book = () => {
   const csrftoken = Cookies.get('csrftoken')
@@ -19,6 +20,7 @@ const Book = () => {
   const [liked, setLiked] = useState(false)
   const [rating, setRating] = useState()
   const [showReview, setShowReview] = useState(false)
+  const [showUpdate, setShowUpdate] = useState(false)
   const history = useHistory()
 
   useEffect(()=> {
@@ -113,6 +115,10 @@ const Book = () => {
     }
   }
 
+  const updateBook = () => {
+    setShowUpdate(!showUpdate)
+  }
+
 
 
   return (
@@ -141,6 +147,7 @@ const Book = () => {
                     { userIsOwner(owner.id) && 
                     <>
                       <br/>
+                      <Button variant='btn btn-outline-light border' onClick={updateBook} >Update</Button>
                       <Button variant='btn btn-outline-light border' onClick={deleteBook} >Delete book
                       </Button>
                     </>
@@ -149,15 +156,21 @@ const Book = () => {
                   }
                 </div>
                 <div className="col-lg-6" id='book_info_column'>
-                  <h3 className="mt-3" id='book_title'>{book.title}</h3>
+                  {showUpdate ?
+                    <UpdateABook book={book} showUpdate={showUpdate} setShowUpdate={setShowUpdate} setBook={setBook} author={author}/>
+                    :
+                    <>
+                      <h3 className="mt-3" id='book_title'>{book.title}</h3>
 
-                  <Link to ={`/author/${author.id}`}><h5 style={{ marginTop: '20px', textDecoration: 'underline' }}>{author.name}</h5></Link>
-                  <p className="text" id='book_text' >First published in {book.publication_year}</p>
-                  <br/>
-                  <p  id='book_text'>{book.description}</p>
-                  <br/>
-                  <Link to={`/browse/${book.genre}`}><p  id='book_show_genre'>{book.genre}</p></Link>
-                  {reviews.length > 0 && <p className="text" id='book_text'> Rating {rating} <i className="fas fa-star"></i></p>}
+                      <Link to ={`/author/${author.id}`}><h5 style={{ marginTop: '20px', textDecoration: 'underline' }}>{author.name}</h5></Link>
+                      <p className="text" id='book_text' >First published in {book.publication_year}</p>
+                      <br/>
+                      <p  id='book_text'>{book.description}</p>
+                      <br/>
+                      <Link to={`/browse/${book.genre}`}><p  id='book_show_genre'>{book.genre}</p></Link>
+                      {reviews.length > 0 && <p className="text" id='book_text'> Rating {rating} <i className="fas fa-star"></i></p>}
+                    </>
+                  }
                 </div>
               </div>
             </div>

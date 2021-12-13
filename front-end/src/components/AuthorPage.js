@@ -9,6 +9,9 @@ import Cookies from 'js-cookie'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/esm/Spinner'
 import AddBook from './AddBook'
+import UpdateAnAuthor from './UpdateAnAuthor'
+
+
 
 const AuthorPage = () => {
   const [liked, setLiked] = useState(false)
@@ -16,6 +19,7 @@ const AuthorPage = () => {
   const [books, setBooks] = useState([])
   const [owner, setOwner] = useState([])
   const [showAdd, setShowAdd] = useState(false)
+  const [showUpdate, setShowUpdate] = useState(false)
   const { id } = useParams()
   const history = useHistory()
   const csrftoken = Cookies.get('csrftoken')
@@ -82,6 +86,10 @@ const AuthorPage = () => {
     setShowAdd(!showAdd)
   }
 
+  const updateAuthor = () => {
+    setShowUpdate(!showUpdate)
+  }
+
   const userIsOwner = (currentUserId) => {
     console.log(currentUserId)
     const payload = getPayload()
@@ -124,9 +132,21 @@ const AuthorPage = () => {
                   }
                 </div>
                 <div className="col-lg-6" id='book_info_column'>
-                  <h3 className="mt-3" id='book_title'>{author.name}</h3>
-                  <p className="text my-4" id='book_text'>{author.biography}</p>
-                  {userIsOwner(owner.id) && <Button variant='btn btn-outline-light border' onClick={deleteAuthor} >Delete book</Button>}            
+                  {showUpdate ?
+                    <UpdateAnAuthor author={author} showUpdate={showUpdate} setShowUpdate={setShowUpdate} setAuthor={setAuthor}/>
+                    :
+                    <>
+                      <h3 className="mt-3" id='book_title'>{author.name}</h3>
+                      <p className="text my-4" id='book_text'>{author.biography}</p>
+                    </>
+                  }
+
+                  {userIsOwner(owner.id) && 
+                  <>
+                    <Button variant='btn btn-outline-light border' onClick={updateAuthor} >Update Author</Button>
+                    <Button variant='btn btn-outline-light border' onClick={deleteAuthor} >Delete Author</Button>
+                  </>
+                  }            
                 </div>
               </div>
             </div>
