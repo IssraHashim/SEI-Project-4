@@ -19,9 +19,8 @@ const Settings = () => {
       if (!token) throw new Error()
       if (!userIsAuthenticated()) throw new Error()
       const header = { 'Authorization': `Bearer ${token}` }
-      const { data } = await axios.get('/api/auth/user', { headers: header },  { headers: { 'X-CSRFToken': csrftoken  } })
+      const { data } = await axios.get('/api/auth/user/', { headers: header },  { headers: { 'X-CSRFToken': csrftoken  } })
       setUserData(data)
-      console.log(data)
     }
     getUserData()
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,13 +32,12 @@ const Settings = () => {
     if (!token) throw new Error()
     if (!userIsAuthenticated()) throw new Error()
     const header = { 'Authorization': `Bearer ${token}` }
-    await axios.delete('/api/auth/user', { headers: header },  { headers: { 'X-CSRFToken': csrftoken  } })
+    await axios.delete('/api/auth/user/', { headers: header },  { headers: { 'X-CSRFToken': csrftoken  } })
     window.localStorage.removeItem('token')
     history.push('/')
   }
 
 
-  console.log(userData)
   return (
     <>
       { userData.email ? 

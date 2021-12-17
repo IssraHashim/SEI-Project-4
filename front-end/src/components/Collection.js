@@ -23,7 +23,7 @@ const Collection = () => {
       if (!token) throw new Error()
       if (!userIsAuthenticated()) throw new Error()
       const header = { 'Authorization': `Bearer ${token}` }
-      const { data } = await axios.get('/api/auth/user', { headers: header },  { headers: { 'X-CSRFToken': csrftoken  } })
+      const { data } = await axios.get('/api/auth/user/', { headers: header },  { headers: { 'X-CSRFToken': csrftoken  } })
       setYourbooks(data.liked_books)
       setYourAuthors(data.liked_authors)
       setLoading(false)

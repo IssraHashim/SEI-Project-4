@@ -33,12 +33,11 @@ const UpdateAnAuthor = ( { author, setShowUpdate, setAuthor, showUpdate } ) => {
     try {
       const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${getTokenFromLocalStorage()}`  }
       await axios.put(`/api/authors/${author.id}/`, formData, { headers: header })
-      const { data } = await axios.get(`/api/authors/${author.id}`)
+      const { data } = await axios.get(`/api/authors/${author.id}/`)
       setShowUpdate(!showUpdate)
       setAuthor(data)
       history.push(`/author/${data.id}`)
     } catch (err) {
-      console.log(err.response.data)
       setErrors(err.response.data)
     }
   }

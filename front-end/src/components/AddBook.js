@@ -48,11 +48,10 @@ const AddBook = ({ AuthorId, setBooks, setShowAdd }) => {
       const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${getTokenFromLocalStorage()}`  }
       await axios.post('/api/books/', formData, { headers: header })
       history.push(`/author/${AuthorId}`)
-      const { data } = await axios.get(`/api/authors/${AuthorId}`)
+      const { data } = await axios.get(`/api/authors/${AuthorId}/`)
       setBooks(data.books)
       setShowAdd(false)
     } catch (err) {
-      console.log(err.response.data)
       setErrors(err.response.data)
     }
   }

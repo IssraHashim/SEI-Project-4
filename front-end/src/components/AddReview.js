@@ -31,7 +31,7 @@ const AddReview = ({ id, setShowReview, setReviews }) => {
       const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${getTokenFromLocalStorage()}`  }
       await axios.post('/api/reviews/', formData, { headers: header })
       history.push(`/books/${id}`)
-      const { data } = await axios.get(`/api/books/${id}`)
+      const { data } = await axios.get(`/api/books/${id}/`)
       setShowReview(false)
       setReviews(data.reviews)
 

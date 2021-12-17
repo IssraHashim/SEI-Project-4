@@ -28,7 +28,7 @@ const AuthorPage = () => {
 
   useEffect(()=> {
     const getData = async() => {
-      const { data } = await axios.get(`/api/authors/${id}`)
+      const { data } = await axios.get(`/api/authors/${id}/`)
       setAuthor(data)
       setBooks(data.books)
       setOwner(data.owner)
@@ -51,7 +51,7 @@ const AuthorPage = () => {
       if (!userIsAuthenticated()) throw new Error()
       const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${token}`  }
   
-      const { data } = await axios.get('/api/auth/user', { headers: header })
+      const { data } = await axios.get('/api/auth/user/', { headers: header })
       return data
     } catch (err) {
       return 
@@ -62,7 +62,7 @@ const AuthorPage = () => {
 
   const followAuthor = async(event) => {
     const user = await getUserData()
-    const { data } = await axios.get(`/api/authors/${id}`)
+    const { data } = await axios.get(`/api/authors/${id}/`)
     if (event.target.classList.contains('liked') || event.target.parentElement.classList.contains('liked')) {
       const index = data.followers.indexOf(user.id)
       data.followers.splice(index, 1)

@@ -38,10 +38,8 @@ const AddanAuthor = () => {
     try {
       const header = { 'X-CSRFToken': csrftoken, 'Authorization': `Bearer ${getTokenFromLocalStorage()}`  }
       const { data } = await axios.post('/api/authors/', formData, { headers: header })
-      console.log(data.id)
       history.push(`/author/${data.id}`)
     } catch (err) {
-      console.log(err.response.data)
       setErrors(err.response.data)
     }
   }

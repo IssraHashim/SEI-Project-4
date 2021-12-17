@@ -51,7 +51,6 @@ const Register = ({ handleClose }) => {
       history.push('/')
       
     } catch (err) {
-      console.log(err.response.data)
       setErrors(err.response.data)
     }
   }

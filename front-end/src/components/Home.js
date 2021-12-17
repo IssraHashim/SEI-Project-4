@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(()=> {
     const getData = async()=> {
-      const { data } = await axios.get('/api/books')
+      const { data } = await axios.get('/api/books/')
       setBooks(data)
     }
     getData()
