@@ -54,21 +54,30 @@ I started drafting an Entity Relationship Diagram of how my backend should be se
 
 <br/>
 
+![Screenshot 2021-12-01 at 11 05 53](https://user-images.githubusercontent.com/69866434/148952732-f4f21213-532d-4c1a-a6ac-eaeae4ae7266.png)
 
 
 
 My wireframe included a show page for books and author, and a user collection page for users.
 
 
-Book page:
+*Book page:*
+
+<img width="997" alt="Screenshot 2021-12-21 at 13 11 15" src="https://user-images.githubusercontent.com/69866434/148952769-f841fe04-19ed-44e5-9a4f-aa5b8f9e01ed.png">
 
 
 
-Author page:
+*Author page:*
+
+<img width="1003" alt="Screenshot 2021-12-21 at 13 11 23" src="https://user-images.githubusercontent.com/69866434/148952839-45d1c004-6fa8-4c7e-a035-7851bb2d51b8.png">
 
 
 
-Collection page:
+*Collection page:*
+
+<img width="994" alt="Screenshot 2021-12-21 at 13 11 51" src="https://user-images.githubusercontent.com/69866434/148952894-d1c82f42-b63c-47ba-b7d2-caab22d87c29.png">
+
+<img width="999" alt="Screenshot 2021-12-21 at 13 11 57" src="https://user-images.githubusercontent.com/69866434/148952919-6cc9d0d3-22d2-4832-bf55-80f05a6c0d7d.png">
 
 
 
@@ -82,10 +91,20 @@ The option to follow authors and books meant storing the ‘followed authors’ 
 
 followers key on book model, with a related_name of liked_books 
 
+<img width="266" alt="Screenshot 2021-12-21 at 13 23 43" src="https://user-images.githubusercontent.com/69866434/148953003-757d3e0f-15c9-474c-83c4-74a3160b8464.png">
+
+<br/>
+
 followers key on author model, with a related_name of liked_authors 
+
+<img width="268" alt="Screenshot 2021-12-21 at 13 17 02" src="https://user-images.githubusercontent.com/69866434/148953038-6f4093f6-dbc1-49d6-8e7a-46009f67b041.png">
+
+<br/>
 
 
 Populated serializer in user app that fills these two fields:
+
+<img width="370" alt="Screenshot 2021-12-21 at 13 25 32" src="https://user-images.githubusercontent.com/69866434/148953096-708c5554-e978-41db-bdca-c65374a4df35.png">
 
 <br/>
 <br/>
@@ -96,8 +115,18 @@ Populated serializer in user app that fills these two fields:
 One of the main challenges I had building this app was calculating the average rating of a book. I decided to do it on the front-end, which meant I had to extract every rating from a book’s review, and calculate the average rating of a book from there.
 I stored every rating in a useState, which allows me to render the page again with a new average rating once a new review with a new rating is posted. 
 
+<br/>
+
+<img width="294" alt="Screenshot 2021-12-21 at 13 47 30" src="https://user-images.githubusercontent.com/69866434/148953143-12a3611f-e45f-4201-95ab-01ff358d0fd5.png">
+
+<img width="589" alt="Screenshot 2021-12-21 at 13 47 17" src="https://user-images.githubusercontent.com/69866434/148953168-6215d658-8981-4d3f-934c-dda124da2674.png">
+
 
 In the return function, I used conditional rendering with && so that if the book has ratings, the average rating will appear.
+
+<br/>
+
+<img width="820" alt="Screenshot 2021-12-21 at 13 51 45" src="https://user-images.githubusercontent.com/69866434/148953281-248b81af-4230-4f3e-86b7-d6f0941e54b5.png">
 
 
 
@@ -105,10 +134,21 @@ I had to use one more step to be able to use this average rating on the browse p
 
 I first stored all books in a new piece of state called allBooks
 
+<br/>
+
+<img width="391" alt="Screenshot 2021-12-21 at 13 56 06" src="https://user-images.githubusercontent.com/69866434/148953362-94115ccb-5806-4bbc-b13d-adc62683bc28.png">
+
 
 And wrote my filter function so if a rating was ticked, it would show only the books with a minimum of that set rating, and if not to display all books.
 
 <br/>
+
+<img width="526" alt="Screenshot 2021-12-21 at 13 55 51" src="https://user-images.githubusercontent.com/69866434/148953415-e421defb-d67e-40e7-bbba-9eee6cab4098.png">
+
+
+<br/>
+<br/>
+
 
 
 **Some features I would have liked to add include:**
