@@ -32,7 +32,7 @@ class Book(models.Model):
     genre = models.CharField(max_length=50, choices=GC_CHOICES, default=None)
     owner = models.ForeignKey(
         'jwt_auth.User',
-        related_name='liked_books',
+        # related_name='liked_books',
         on_delete=models.CASCADE
     )
     followers = models.ManyToManyField(
